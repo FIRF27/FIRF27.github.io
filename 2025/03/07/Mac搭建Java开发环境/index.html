@@ -19,22 +19,25 @@
   <meta name="author" content="FIRF27">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.新建文件夹crashLog12$ mkdir -p crashLog # pwd: &#x2F;Users&#x2F;apple&#x2F;Desktop&#x2F;crashLog  2. 找出symbolicatecrash1234567$ cd &#x2F;Applications&#x2F;Xcode.app&#x2F;Contents$ find . -name symbolicatecrash# .&#x2F;SharedFrameworks&#x2F;DVTFound">
+    <meta name="description" content="JDK的下载和安装官网获取JDK: https:&#x2F;&#x2F;www.oracle.com&#x2F;cn&#x2F;  傻瓜式安装一路到底 配置环在~&#x2F;.zshrc  追加 12345678910111213# 我选择的是21版本# JDK# 配置JDK路径export JAVA_21_HOME&#x3D;&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk-21.jdk&#x2F;Contents&#x2F;Home# 设置默认J">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用symbolicatecrash解析KSCrash的崩溃日志">
-<meta property="og:url" content="http://example.com/2025/03/07/%E4%BD%BF%E7%94%A8symbolicatecrash%E8%A7%A3%E6%9E%90KSCrash%E7%9A%84%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97/index.html">
+<meta property="og:title" content="Mac搭建Java开发环境">
+<meta property="og:url" content="http://example.com/2025/03/07/Mac%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="FIRF">
-<meta property="og:description" content="1.新建文件夹crashLog12$ mkdir -p crashLog # pwd: &#x2F;Users&#x2F;apple&#x2F;Desktop&#x2F;crashLog  2. 找出symbolicatecrash1234567$ cd &#x2F;Applications&#x2F;Xcode.app&#x2F;Contents$ find . -name symbolicatecrash# .&#x2F;SharedFrameworks&#x2F;DVTFound">
+<meta property="og:description" content="JDK的下载和安装官网获取JDK: https:&#x2F;&#x2F;www.oracle.com&#x2F;cn&#x2F;  傻瓜式安装一路到底 配置环在~&#x2F;.zshrc  追加 12345678910111213# 我选择的是21版本# JDK# 配置JDK路径export JAVA_21_HOME&#x3D;&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk-21.jdk&#x2F;Contents&#x2F;Home# 设置默认J">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-07T07:14:14.000Z">
-<meta property="article:modified_time" content="2025-03-07T07:15:56.104Z">
+<meta property="og:image" content="https://p.ipic.vip/f9nxvj.png">
+<meta property="og:image" content="https://p.ipic.vip/yhw7sg.png">
+<meta property="article:published_time" content="2025-03-07T07:56:17.000Z">
+<meta property="article:modified_time" content="2025-03-07T08:16:49.990Z">
 <meta property="article:author" content="FIRF27">
-<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://p.ipic.vip/f9nxvj.png">
   
   
   
-  <title>使用symbolicatecrash解析KSCrash的崩溃日志 - FIRF</title>
+  <title>Mac搭建Java开发环境 - FIRF</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="使用symbolicatecrash解析KSCrash的崩溃日志"></span>
+            <span id="subtitle" data-typed-text="Mac搭建Java开发环境"></span>
           
         </div>
 
@@ -211,7 +214,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-07 15:14" pubdate>
+        <time datetime="2025-03-07 15:56" pubdate>
           2025年3月7日 下午
         </time>
       </span>
@@ -223,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          120 字
+          183 字
         
       </span>
     
@@ -271,21 +274,28 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">使用symbolicatecrash解析KSCrash的崩溃日志</h1>
+            <h1 id="seo-header">Mac搭建Java开发环境</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="1-新建文件夹crashLog"><a href="#1-新建文件夹crashLog" class="headerlink" title="1.新建文件夹crashLog"></a>1.新建文件夹<code>crashLog</code></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">mkdir</span> -p crashLog</span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">pwd</span>: /Users/apple/Desktop/crashLog</span><br></code></pre></td></tr></table></figure>
+                <h2 id="JDK的下载和安装"><a href="#JDK的下载和安装" class="headerlink" title="JDK的下载和安装"></a>JDK的下载和安装</h2><p>官网获取JDK:</p>
+<p><a target="_blank" rel="noopener" href="https://www.oracle.com/cn/">https://www.oracle.com/cn/</a></p>
+<p><img src="https://p.ipic.vip/f9nxvj.png" srcset="/img/loading.gif" lazyload alt="image-20250307160107769"></p>
+<p>傻瓜式安装一路到底</p>
+<h2 id="配置环"><a href="#配置环" class="headerlink" title="配置环"></a>配置环</h2><p>在<code>~/.zshrc </code> 追加</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment"># 我选择的是21版本</span><br><br><span class="hljs-comment"># JDK</span><br><span class="hljs-comment"># 配置JDK路径</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">JAVA_21_HOME</span>=/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home<br><span class="hljs-comment"># 设置默认JDK版本</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">JAVA_HOME</span>=<span class="hljs-variable">$JAVA_21_HOME</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">CLASSPATH</span>=<span class="hljs-variable">$JAVA_HOME</span>/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.<br><br><span class="hljs-comment"># 配置alias命令动态切换JDK版本</span><br>alias <span class="hljs-attribute">jdk21</span>=<span class="hljs-string">&quot;export JAVA_HOME=<span class="hljs-variable">$JAVA_21_HOME</span>&quot;</span><br><br><br></code></pre></td></tr></table></figure>
 
-<h3 id="2-找出symbolicatecrash"><a href="#2-找出symbolicatecrash" class="headerlink" title="2. 找出symbolicatecrash"></a>2. 找出symbolicatecrash</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> /Applications/Xcode.app/Contents</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -name symbolicatecrash</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">./SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">复制symbolicatecrash到crashLog文件夹下</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cp</span> ./SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  ~/Desktop/crashLog</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">/path/to/crashLog</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="3-复制temp-crash文件到crashLog文件夹"><a href="#3-复制temp-crash文件到crashLog文件夹" class="headerlink" title="3. 复制temp.crash文件到crashLog文件夹"></a>3. 复制temp.crash文件到crashLog文件夹</h3><h3 id="4-复制xxApp-app-dSYM文件到crashLog文件夹"><a href="#4-复制xxApp-app-dSYM文件到crashLog文件夹" class="headerlink" title="4. 复制xxApp.app.dSYM文件到crashLog文件夹"></a>4. 复制xxApp.app.dSYM文件到crashLog文件夹</h3><h3 id="4-在crashLog文件夹下解析"><a href="#4-在crashLog文件夹下解析" class="headerlink" title="4. 在crashLog文件夹下解析"></a>4. 在crashLog文件夹下解析</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">1./path/to/crashLog</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> ~/Desktop/crashLog</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">2.执行命令</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">xcode-select -p</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">/Applications/Xcode.app/Contents/Developer</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">export</span> DEVELOPER_DIR=<span class="hljs-string">&quot;/Applications/XCode.app/Contents/Developer&quot;</span></span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">开始解析</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">./symbolicatecrash temp.crash xxApp.app.dSYM &gt; crash.log</span><br></code></pre></td></tr></table></figure>
-
+<p>修改完毕后, 执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs she"># 让配置立即生效<br>$ source ~/.zshrc<br><br>$ java --version<br><br># java 21.0.6 2025-01-21 LTS<br># Java(TM) SE Runtime Environment (build 21.0.6+8-LTS-188)<br># Java HotSpot(TM) 64-Bit Server VM (build 21.0.6+8-LTS-188, mixed mode, sharing)<br></code></pre></td></tr></table></figure>
 
 
 
+<h2 id="手撸Java代码验证"><a href="#手撸Java代码验证" class="headerlink" title="手撸Java代码验证"></a>手撸Java代码验证</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs csharp"> $ vim test.java<br> <br><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> &#123;<br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] <span class="hljs-keyword">args</span></span>)</span> &#123;<br>		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>	&#125;<br>&#125;<br><br> $ java test.java<br> <span class="hljs-meta"># Hello World!</span><br><br></code></pre></td></tr></table></figure>
 
+<h2 id="安装IntelliJ-IDEA-社区版"><a href="#安装IntelliJ-IDEA-社区版" class="headerlink" title="安装IntelliJ IDEA 社区版"></a>安装IntelliJ IDEA 社区版</h2><p>官网地址： <a target="_blank" rel="noopener" href="https://www.jetbrains.com/idea/download/?section=mac">https://www.jetbrains.com/idea/download/?section=mac</a></p>
+<p>界面往下拉, 选择<code>IntelliJ IDEA Community Edition</code>版本.</p>
+<p><img src="https://p.ipic.vip/yhw7sg.png" srcset="/img/loading.gif" lazyload alt="image-20250307161623022"></p>
 
                 
               </div>
@@ -304,7 +314,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/iOS/" class="category-chain-item">iOS</a>
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
   
   
 
@@ -319,7 +329,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/iOS/" class="print-no-link">#iOS</a>
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
       
     </div>
   
@@ -331,8 +341,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>使用symbolicatecrash解析KSCrash的崩溃日志</div>
-      <div>http://example.com/2025/03/07/使用symbolicatecrash解析KSCrash的崩溃日志/</div>
+      <div>Mac搭建Java开发环境</div>
+      <div>http://example.com/2025/03/07/Mac搭建Java开发环境/</div>
     </div>
     <div class="license-meta">
       
@@ -376,18 +386,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/07/Mac%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="Mac搭建Java开发环境">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Mac搭建Java开发环境</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/07/Mach-O/" title="Mach-O">
-                        <span class="hidden-mobile">Mach-O</span>
+                      <a href="/2025/03/07/%E4%BD%BF%E7%94%A8symbolicatecrash%E8%A7%A3%E6%9E%90KSCrash%E7%9A%84%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97/" title="使用symbolicatecrash解析KSCrash的崩溃日志">
+                        <span class="hidden-mobile">使用symbolicatecrash解析KSCrash的崩溃日志</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
