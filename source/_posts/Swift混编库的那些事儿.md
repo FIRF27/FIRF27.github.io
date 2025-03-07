@@ -1,7 +1,10 @@
 ---
 title: Swift混编库的那些事儿
 date: 2025-03-07 13:42:21
-tags:
+tags: [iOS, Swift]
+categories: 
+  - [iOS]
+  - [Swift]
 ---
 
 # Swift混编库的那些事儿

@@ -1,7 +1,7 @@
 ---
 title: Mach-O
 date: 2025-03-07 13:42:47
-tags:
+tags: [iOS]
 ---
 
 # Mach-O
