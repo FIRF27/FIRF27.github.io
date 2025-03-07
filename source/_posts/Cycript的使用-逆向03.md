@@ -1,7 +1,9 @@
 ---
 title: Cycript的使用-逆向03
 date: 2025-03-07 13:42:31
-tags:
+tags: [iOS, 逆向]
+categories: 
+  - [iOS]
 ---
 
 # Cycript的使用-逆向03

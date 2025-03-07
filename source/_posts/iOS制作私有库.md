@@ -1,7 +1,9 @@
 ---
 title: iOS制作私有库
 date: 2025-03-07 13:42:02
-tags:
+tags: [iOS]
+categories: 
+  - [iOS]
 ---
 
 # iOS制作私有库

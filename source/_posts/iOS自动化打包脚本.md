@@ -1,7 +1,9 @@
 ---
 title: iOS自动化打包脚本
 date: 2025-03-07 13:42:11
-tags:
+tags: [iOS]
+categories: 
+  - [iOS]
 ---
 
 # iOS自动化打包脚本

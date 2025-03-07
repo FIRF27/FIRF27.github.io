@@ -2,6 +2,8 @@
 title: iOS动态调试-逆向04
 date: 2025-03-07 13:42:39
 tags: [逆向, iOS]
+categories: 
+  - [iOS]
 ---
 
 # iOS动态调试-逆向04

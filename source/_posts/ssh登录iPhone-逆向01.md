@@ -2,6 +2,8 @@
 title: ssh登录iPhone-逆向01
 date: 2025-03-07 13:41:51
 tags: [iOS, 逆向]
+categories: 
+  - [iOS]
 ---
 
 # ssh登录iPhone-逆向01

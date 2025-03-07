@@ -2,6 +2,8 @@
 title: Mach-O
 date: 2025-03-07 13:42:47
 tags: [iOS]
+categories: 
+  - [iOS]
 ---
 
 # Mach-O
