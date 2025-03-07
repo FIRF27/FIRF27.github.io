@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>使用symbolicatecrash解析KSCrash的崩溃日志</title>
+    <link href="/2025/03/07/%E4%BD%BF%E7%94%A8symbolicatecrash%E8%A7%A3%E6%9E%90KSCrash%E7%9A%84%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97/"/>
+    <url>/2025/03/07/%E4%BD%BF%E7%94%A8symbolicatecrash%E8%A7%A3%E6%9E%90KSCrash%E7%9A%84%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1-新建文件夹crashLog"><a href="#1-新建文件夹crashLog" class="headerlink" title="1.新建文件夹crashLog"></a>1.新建文件夹<code>crashLog</code></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">mkdir</span> -p crashLog</span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">pwd</span>: /Users/apple/Desktop/crashLog</span><br></code></pre></td></tr></table></figure><h3 id="2-找出symbolicatecrash"><a href="#2-找出symbolicatecrash" class="headerlink" title="2. 找出symbolicatecrash"></a>2. 找出symbolicatecrash</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> /Applications/Xcode.app/Contents</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -name symbolicatecrash</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">./SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">复制symbolicatecrash到crashLog文件夹下</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cp</span> ./SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  ~/Desktop/crashLog</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">/path/to/crashLog</span><br></code></pre></td></tr></table></figure><h3 id="3-复制temp-crash文件到crashLog文件夹"><a href="#3-复制temp-crash文件到crashLog文件夹" class="headerlink" title="3. 复制temp.crash文件到crashLog文件夹"></a>3. 复制temp.crash文件到crashLog文件夹</h3><h3 id="4-复制xxApp-app-dSYM文件到crashLog文件夹"><a href="#4-复制xxApp-app-dSYM文件到crashLog文件夹" class="headerlink" title="4. 复制xxApp.app.dSYM文件到crashLog文件夹"></a>4. 复制xxApp.app.dSYM文件到crashLog文件夹</h3><h3 id="4-在crashLog文件夹下解析"><a href="#4-在crashLog文件夹下解析" class="headerlink" title="4. 在crashLog文件夹下解析"></a>4. 在crashLog文件夹下解析</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">1./path/to/crashLog</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> ~/Desktop/crashLog</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">2.执行命令</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">xcode-select -p</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">/Applications/Xcode.app/Contents/Developer</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">export</span> DEVELOPER_DIR=<span class="hljs-string">&quot;/Applications/XCode.app/Contents/Developer&quot;</span></span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">开始解析</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">./symbolicatecrash temp.crash xxApp.app.dSYM &gt; crash.log</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>iOS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>iOS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Mach-O</title>
     <link href="/2025/03/07/Mach-O/"/>
     <url>/2025/03/07/Mach-O/</url>

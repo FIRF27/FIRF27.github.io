@@ -19,22 +19,22 @@
   <meta name="author" content="FIRF27">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Mach-OMach-O是Mach object缩写，是mac&#x2F;ios上用于存储程序、库的标准格式 https:&#x2F;&#x2F;developer.apple.com&#x2F;library&#x2F;archive&#x2F;navigation&#x2F; 常见类型 MH_OBJECT 目标文件(.o)  静态库(.a) 静态库其实就是多个.o合并在一起   MH_EXECUTE 可执行文件   MH_DYLIB 动态库文件(.dy">
+    <meta name="description" content="1.新建文件夹crashLog12$ mkdir -p crashLog # pwd: &#x2F;Users&#x2F;apple&#x2F;Desktop&#x2F;crashLog  2. 找出symbolicatecrash1234567$ cd &#x2F;Applications&#x2F;Xcode.app&#x2F;Contents$ find . -name symbolicatecrash# .&#x2F;SharedFrameworks&#x2F;DVTFound">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mach-O">
-<meta property="og:url" content="http://example.com/2025/03/07/Mach-O/index.html">
+<meta property="og:title" content="使用symbolicatecrash解析KSCrash的崩溃日志">
+<meta property="og:url" content="http://example.com/2025/03/07/%E4%BD%BF%E7%94%A8symbolicatecrash%E8%A7%A3%E6%9E%90KSCrash%E7%9A%84%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="FIRF">
-<meta property="og:description" content="Mach-OMach-O是Mach object缩写，是mac&#x2F;ios上用于存储程序、库的标准格式 https:&#x2F;&#x2F;developer.apple.com&#x2F;library&#x2F;archive&#x2F;navigation&#x2F; 常见类型 MH_OBJECT 目标文件(.o)  静态库(.a) 静态库其实就是多个.o合并在一起   MH_EXECUTE 可执行文件   MH_DYLIB 动态库文件(.dy">
+<meta property="og:description" content="1.新建文件夹crashLog12$ mkdir -p crashLog # pwd: &#x2F;Users&#x2F;apple&#x2F;Desktop&#x2F;crashLog  2. 找出symbolicatecrash1234567$ cd &#x2F;Applications&#x2F;Xcode.app&#x2F;Contents$ find . -name symbolicatecrash# .&#x2F;SharedFrameworks&#x2F;DVTFound">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-07T05:42:47.000Z">
-<meta property="article:modified_time" content="2025-03-07T06:43:05.168Z">
+<meta property="article:published_time" content="2025-03-07T07:14:14.000Z">
+<meta property="article:modified_time" content="2025-03-07T07:15:56.104Z">
 <meta property="article:author" content="FIRF27">
 <meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Mach-O - FIRF</title>
+  <title>使用symbolicatecrash解析KSCrash的崩溃日志 - FIRF</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Mach-O"></span>
+            <span id="subtitle" data-typed-text="使用symbolicatecrash解析KSCrash的崩溃日志"></span>
           
         </div>
 
@@ -211,7 +211,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-07 13:42" pubdate>
+        <time datetime="2025-03-07 15:14" pubdate>
           2025年3月7日 下午
         </time>
       </span>
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          195 字
+          120 字
         
       </span>
     
@@ -271,52 +271,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Mach-O</h1>
+            <h1 id="seo-header">使用symbolicatecrash解析KSCrash的崩溃日志</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Mach-O"><a href="#Mach-O" class="headerlink" title="Mach-O"></a>Mach-O</h1><p>Mach-O是Mach object缩写，是mac&#x2F;ios上用于存储程序、库的标准格式</p>
-<p><a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/navigation/">https://developer.apple.com/library/archive/navigation/</a></p>
-<h5 id="常见类型"><a href="#常见类型" class="headerlink" title="常见类型"></a>常见类型</h5><ul>
-<li>MH_OBJECT<ul>
-<li>目标文件(.o) </li>
-<li>静态库(.a) 静态库其实就是多个.o合并在一起</li>
-</ul>
-</li>
-<li>MH_EXECUTE<ul>
-<li>可执行文件</li>
-</ul>
-</li>
-<li>MH_DYLIB<ul>
-<li>动态库文件(.dylib .framework)</li>
-</ul>
-</li>
-<li>MH_DYLINKER<ul>
-<li>动态链接编辑器 dyld</li>
-</ul>
-</li>
-<li>MH_DSYM<ul>
-<li>存储着二进制文件符号信息的文件</li>
-</ul>
-</li>
-</ul>
-<h5 id="Mach-O-组成"><a href="#Mach-O-组成" class="headerlink" title="Mach-O 组成"></a>Mach-O 组成</h5><p><a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html">https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html</a></p>
-<p>A Mach-O file has the following regions of data (the complete format is described in OS X ABI Mach-O File Format Reference):</p>
-<ul>
-<li>Header: Specifies the target architecture of the file, such as PPC, PPC64, IA-32, or x86-64.<br>文件类型、目标架构类型等</li>
-<li>Load commands: Specify the logical structure of the file and the layout of the file in virtual memory.<br>描述文件在虚拟内存中的逻辑结构、布局</li>
-<li>Raw segment data: Contains raw data for the segments defined in the load commands.<br>在load commands.中定义的Segment的原始数据</li>
-</ul>
-<h5 id="dyld"><a href="#dyld" class="headerlink" title="dyld"></a>dyld</h5><p>dyld用于加载以下类型的Mach-O文件</p>
-<ul>
-<li>MH_EXECUTE</li>
-<li>MH_DYLINKER</li>
-<li>MH_BUNDLE</li>
-</ul>
-<blockquote>
-<p>App的可执行文件、动态库都是由dyld负责加载的</p>
-</blockquote>
+                <h3 id="1-新建文件夹crashLog"><a href="#1-新建文件夹crashLog" class="headerlink" title="1.新建文件夹crashLog"></a>1.新建文件夹<code>crashLog</code></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">mkdir</span> -p crashLog</span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">pwd</span>: /Users/apple/Desktop/crashLog</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-找出symbolicatecrash"><a href="#2-找出symbolicatecrash" class="headerlink" title="2. 找出symbolicatecrash"></a>2. 找出symbolicatecrash</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> /Applications/Xcode.app/Contents</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -name symbolicatecrash</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">./SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">复制symbolicatecrash到crashLog文件夹下</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cp</span> ./SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  ~/Desktop/crashLog</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">/path/to/crashLog</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-复制temp-crash文件到crashLog文件夹"><a href="#3-复制temp-crash文件到crashLog文件夹" class="headerlink" title="3. 复制temp.crash文件到crashLog文件夹"></a>3. 复制temp.crash文件到crashLog文件夹</h3><h3 id="4-复制xxApp-app-dSYM文件到crashLog文件夹"><a href="#4-复制xxApp-app-dSYM文件到crashLog文件夹" class="headerlink" title="4. 复制xxApp.app.dSYM文件到crashLog文件夹"></a>4. 复制xxApp.app.dSYM文件到crashLog文件夹</h3><h3 id="4-在crashLog文件夹下解析"><a href="#4-在crashLog文件夹下解析" class="headerlink" title="4. 在crashLog文件夹下解析"></a>4. 在crashLog文件夹下解析</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">1./path/to/crashLog</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> ~/Desktop/crashLog</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">2.执行命令</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">xcode-select -p</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">/Applications/Xcode.app/Contents/Developer</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">export</span> DEVELOPER_DIR=<span class="hljs-string">&quot;/Applications/XCode.app/Contents/Developer&quot;</span></span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">开始解析</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">./symbolicatecrash temp.crash xxApp.app.dSYM &gt; crash.log</span><br></code></pre></td></tr></table></figure>
+
+
+
+
+
 
                 
               </div>
@@ -362,8 +331,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Mach-O</div>
-      <div>http://example.com/2025/03/07/Mach-O/</div>
+      <div>使用symbolicatecrash解析KSCrash的崩溃日志</div>
+      <div>http://example.com/2025/03/07/使用symbolicatecrash解析KSCrash的崩溃日志/</div>
     </div>
     <div class="license-meta">
       
@@ -407,18 +376,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/07/%E4%BD%BF%E7%94%A8symbolicatecrash%E8%A7%A3%E6%9E%90KSCrash%E7%9A%84%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97/" title="使用symbolicatecrash解析KSCrash的崩溃日志">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">使用symbolicatecrash解析KSCrash的崩溃日志</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/07/iOS%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95-%E9%80%86%E5%90%9104/" title="iOS动态调试-逆向04">
-                        <span class="hidden-mobile">iOS动态调试-逆向04</span>
+                      <a href="/2025/03/07/Mach-O/" title="Mach-O">
+                        <span class="hidden-mobile">Mach-O</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
