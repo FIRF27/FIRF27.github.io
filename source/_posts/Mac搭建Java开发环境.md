@@ -6,6 +6,8 @@ categories:
 date: 2025-03-07 15:56:17
 ---
 
+> 参考链接: https://blog.csdn.net/qq_40271145/article/details/142143194
+
 ## JDK的下载和安装
 
 官网获取JDK:
