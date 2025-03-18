@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>使用jar命令替换jar包中指定文件</title>
+    <link href="/2025/03/18/%E4%BD%BF%E7%94%A8jar%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2jar%E5%8C%85%E4%B8%AD%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6/"/>
+    <url>/2025/03/18/%E4%BD%BF%E7%94%A8jar%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2jar%E5%8C%85%E4%B8%AD%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6/</url>
+    
+    <content type="html"><![CDATA[<h1 id="使用jar命令替换jar包中指定文件"><a href="#使用jar命令替换jar包中指定文件" class="headerlink" title="使用jar命令替换jar包中指定文件"></a>使用jar命令替换jar包中指定文件</h1><h3 id="替换jar包中指定文件"><a href="#替换jar包中指定文件" class="headerlink" title="替换jar包中指定文件"></a>替换jar包中指定文件</h3><h4 id="1-列出指定文件的路径"><a href="#1-列出指定文件的路径" class="headerlink" title="1. 列出指定文件的路径"></a>1. 列出指定文件的路径</h4><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle">jar -tvf xxx.jar | <span class="hljs-keyword">grep</span> xxx.<span class="hljs-keyword">class</span><br><br> # 输出结果示例 BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device<span class="hljs-regexp">/impl/</span>SyncDevInfoServiceImpl.<span class="hljs-keyword">class</span><br></code></pre></td></tr></table></figure><h3 id="2-解压指定路径下的文件"><a href="#2-解压指定路径下的文件" class="headerlink" title="2. 解压指定路径下的文件"></a>2. 解压指定路径下的文件</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gradle">jar -xvf xxx.jar <span class="hljs-regexp">/path/</span>to<span class="hljs-regexp">/jar/</span>location<br><br>eg. <br>jar -xvf xx.jar  BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device<span class="hljs-regexp">/impl/</span>SyncDevInfoServiceImpl.<span class="hljs-keyword">class</span><br></code></pre></td></tr></table></figure><h3 id="3-替换解压目录的下的文件"><a href="#3-替换解压目录的下的文件" class="headerlink" title="3. 替换解压目录的下的文件"></a>3. 替换解压目录的下的文件</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle">mv -i newYY.<span class="hljs-keyword">class</span> BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device/impl<br></code></pre></td></tr></table></figure><h3 id="4-更新到jar包中"><a href="#4-更新到jar包中" class="headerlink" title="4. 更新到jar包中"></a>4. 更新到jar包中</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">jar -uvf xxx.jar /<span class="hljs-type">path</span>/<span class="hljs-keyword">to</span>/newYY.<span class="hljs-keyword">class</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Mac搭建Java开发环境</title>
     <link href="/2025/03/07/Mac%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     <url>/2025/03/07/Mac%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>

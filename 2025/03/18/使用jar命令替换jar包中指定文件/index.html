@@ -19,25 +19,22 @@
   <meta name="author" content="FIRF27">
   <meta name="keywords" content="">
   
-    <meta name="description" content="参考链接: https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_40271145&#x2F;article&#x2F;details&#x2F;142143194  JDK的下载和安装官网获取JDK: https:&#x2F;&#x2F;www.oracle.com&#x2F;cn&#x2F;  傻瓜式安装一路到底 配置环在~&#x2F;.zshrc  追加 12345678910111213# 我选择的是21版本# JDK# 配置JDK路径export JAVA_21_HO">
+    <meta name="description" content="使用jar命令替换jar包中指定文件替换jar包中指定文件1. 列出指定文件的路径123jar -tvf xxx.jar | grep xxx.class # 输出结果示例 BOOT-INF&#x2F;classes&#x2F;com&#x2F;netinfo&#x2F;system&#x2F;service&#x2F;device&#x2F;impl&#x2F;SyncDevInfoServiceImpl.class  2. 解压指定路径下的文件1234jar -xvf x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac搭建Java开发环境">
-<meta property="og:url" content="http://example.com/2025/03/07/Mac%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:title" content="使用jar命令替换jar包中指定文件">
+<meta property="og:url" content="http://example.com/2025/03/18/%E4%BD%BF%E7%94%A8jar%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2jar%E5%8C%85%E4%B8%AD%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6/index.html">
 <meta property="og:site_name" content="FIRF">
-<meta property="og:description" content="参考链接: https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_40271145&#x2F;article&#x2F;details&#x2F;142143194  JDK的下载和安装官网获取JDK: https:&#x2F;&#x2F;www.oracle.com&#x2F;cn&#x2F;  傻瓜式安装一路到底 配置环在~&#x2F;.zshrc  追加 12345678910111213# 我选择的是21版本# JDK# 配置JDK路径export JAVA_21_HO">
+<meta property="og:description" content="使用jar命令替换jar包中指定文件替换jar包中指定文件1. 列出指定文件的路径123jar -tvf xxx.jar | grep xxx.class # 输出结果示例 BOOT-INF&#x2F;classes&#x2F;com&#x2F;netinfo&#x2F;system&#x2F;service&#x2F;device&#x2F;impl&#x2F;SyncDevInfoServiceImpl.class  2. 解压指定路径下的文件1234jar -xvf x">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://p.ipic.vip/f9nxvj.png">
-<meta property="og:image" content="https://p.ipic.vip/yhw7sg.png">
-<meta property="article:published_time" content="2025-03-07T07:56:17.000Z">
-<meta property="article:modified_time" content="2025-03-10T03:22:59.083Z">
+<meta property="article:published_time" content="2025-03-18T09:53:47.000Z">
+<meta property="article:modified_time" content="2025-03-18T09:54:24.523Z">
 <meta property="article:author" content="FIRF27">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://p.ipic.vip/f9nxvj.png">
   
   
   
-  <title>Mac搭建Java开发环境 - FIRF</title>
+  <title>使用jar命令替换jar包中指定文件 - FIRF</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Mac搭建Java开发环境"></span>
+            <span id="subtitle" data-typed-text="使用jar命令替换jar包中指定文件"></span>
           
         </div>
 
@@ -214,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-07 15:56" pubdate>
-          2025年3月7日 下午
+        <time datetime="2025-03-18 17:53" pubdate>
+          2025年3月18日 下午
         </time>
       </span>
     
@@ -226,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          194 字
+          116 字
         
       </span>
     
@@ -237,7 +234,7 @@
         
         
         
-          2 分钟
+          1 分钟
         
       </span>
     
@@ -274,31 +271,19 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Mac搭建Java开发环境</h1>
+            <h1 id="seo-header">使用jar命令替换jar包中指定文件</h1>
             
             
               <div class="markdown-body">
                 
-                <blockquote>
-<p>参考链接: <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40271145/article/details/142143194">https://blog.csdn.net/qq_40271145/article/details/142143194</a></p>
-</blockquote>
-<h2 id="JDK的下载和安装"><a href="#JDK的下载和安装" class="headerlink" title="JDK的下载和安装"></a>JDK的下载和安装</h2><p>官网获取JDK:</p>
-<p><a target="_blank" rel="noopener" href="https://www.oracle.com/cn/">https://www.oracle.com/cn/</a></p>
-<p><img src="https://p.ipic.vip/f9nxvj.png" srcset="/img/loading.gif" lazyload alt="image-20250307160107769"></p>
-<p>傻瓜式安装一路到底</p>
-<h2 id="配置环"><a href="#配置环" class="headerlink" title="配置环"></a>配置环</h2><p>在<code>~/.zshrc </code> 追加</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment"># 我选择的是21版本</span><br><br><span class="hljs-comment"># JDK</span><br><span class="hljs-comment"># 配置JDK路径</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">JAVA_21_HOME</span>=/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home<br><span class="hljs-comment"># 设置默认JDK版本</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">JAVA_HOME</span>=<span class="hljs-variable">$JAVA_21_HOME</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">CLASSPATH</span>=<span class="hljs-variable">$JAVA_HOME</span>/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.<br><br><span class="hljs-comment"># 配置alias命令动态切换JDK版本</span><br>alias <span class="hljs-attribute">jdk21</span>=<span class="hljs-string">&quot;export JAVA_HOME=<span class="hljs-variable">$JAVA_21_HOME</span>&quot;</span><br><br><br></code></pre></td></tr></table></figure>
+                <h1 id="使用jar命令替换jar包中指定文件"><a href="#使用jar命令替换jar包中指定文件" class="headerlink" title="使用jar命令替换jar包中指定文件"></a>使用jar命令替换jar包中指定文件</h1><h3 id="替换jar包中指定文件"><a href="#替换jar包中指定文件" class="headerlink" title="替换jar包中指定文件"></a>替换jar包中指定文件</h3><h4 id="1-列出指定文件的路径"><a href="#1-列出指定文件的路径" class="headerlink" title="1. 列出指定文件的路径"></a>1. 列出指定文件的路径</h4><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle">jar -tvf xxx.jar | <span class="hljs-keyword">grep</span> xxx.<span class="hljs-keyword">class</span><br><br> # 输出结果示例 BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device<span class="hljs-regexp">/impl/</span>SyncDevInfoServiceImpl.<span class="hljs-keyword">class</span><br></code></pre></td></tr></table></figure>
 
-<p>修改完毕后, 执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs she"># 让配置立即生效<br>$ source ~/.zshrc<br><br>$ java --version<br><br># java 21.0.6 2025-01-21 LTS<br># Java(TM) SE Runtime Environment (build 21.0.6+8-LTS-188)<br># Java HotSpot(TM) 64-Bit Server VM (build 21.0.6+8-LTS-188, mixed mode, sharing)<br></code></pre></td></tr></table></figure>
+<h3 id="2-解压指定路径下的文件"><a href="#2-解压指定路径下的文件" class="headerlink" title="2. 解压指定路径下的文件"></a>2. 解压指定路径下的文件</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gradle">jar -xvf xxx.jar <span class="hljs-regexp">/path/</span>to<span class="hljs-regexp">/jar/</span>location<br><br>eg. <br>jar -xvf xx.jar  BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device<span class="hljs-regexp">/impl/</span>SyncDevInfoServiceImpl.<span class="hljs-keyword">class</span><br></code></pre></td></tr></table></figure>
 
+<h3 id="3-替换解压目录的下的文件"><a href="#3-替换解压目录的下的文件" class="headerlink" title="3. 替换解压目录的下的文件"></a>3. 替换解压目录的下的文件</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle">mv -i newYY.<span class="hljs-keyword">class</span> BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device/impl<br></code></pre></td></tr></table></figure>
 
+<h3 id="4-更新到jar包中"><a href="#4-更新到jar包中" class="headerlink" title="4. 更新到jar包中"></a>4. 更新到jar包中</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">jar -uvf xxx.jar /<span class="hljs-type">path</span>/<span class="hljs-keyword">to</span>/newYY.<span class="hljs-keyword">class</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="手撸Java代码验证"><a href="#手撸Java代码验证" class="headerlink" title="手撸Java代码验证"></a>手撸Java代码验证</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs csharp"> $ vim test.java<br> <br><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> &#123;<br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] <span class="hljs-keyword">args</span></span>)</span> &#123;<br>		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>	&#125;<br>&#125;<br><br> $ java test.java<br> <span class="hljs-meta"># Hello World!</span><br><br></code></pre></td></tr></table></figure>
-
-<h2 id="安装IntelliJ-IDEA-社区版"><a href="#安装IntelliJ-IDEA-社区版" class="headerlink" title="安装IntelliJ IDEA 社区版"></a>安装IntelliJ IDEA 社区版</h2><p>官网地址： <a target="_blank" rel="noopener" href="https://www.jetbrains.com/idea/download/?section=mac">https://www.jetbrains.com/idea/download/?section=mac</a></p>
-<p>界面往下拉, 选择<code>IntelliJ IDEA Community Edition</code>版本.</p>
-<p><img src="https://p.ipic.vip/yhw7sg.png" srcset="/img/loading.gif" lazyload alt="image-20250307161623022"></p>
 
                 
               </div>
@@ -344,8 +329,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Mac搭建Java开发环境</div>
-      <div>http://example.com/2025/03/07/Mac搭建Java开发环境/</div>
+      <div>使用jar命令替换jar包中指定文件</div>
+      <div>http://example.com/2025/03/18/使用jar命令替换jar包中指定文件/</div>
     </div>
     <div class="license-meta">
       
@@ -357,7 +342,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年3月7日</div>
+          <div>2025年3月18日</div>
         </div>
       
       
@@ -389,18 +374,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/18/%E4%BD%BF%E7%94%A8jar%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2jar%E5%8C%85%E4%B8%AD%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6/" title="使用jar命令替换jar包中指定文件">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">使用jar命令替换jar包中指定文件</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/07/%E4%BD%BF%E7%94%A8symbolicatecrash%E8%A7%A3%E6%9E%90KSCrash%E7%9A%84%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97/" title="使用symbolicatecrash解析KSCrash的崩溃日志">
-                        <span class="hidden-mobile">使用symbolicatecrash解析KSCrash的崩溃日志</span>
+                      <a href="/2025/03/07/Mac%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="Mac搭建Java开发环境">
+                        <span class="hidden-mobile">Mac搭建Java开发环境</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
