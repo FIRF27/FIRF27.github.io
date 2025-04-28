@@ -12,7 +12,8 @@ categories:
 ##### 1、在swift framwork中调用oc且不向外暴露
 
 - 使用module.modulemap文件
-- `Build Setting` ->`Swift Compile - Search Path` 中设置`module.modulemap`路径 `"$(SRCROOT)/xxx"`
+- `Build Setting` ->`Swift Compile - Search Path` 中设置`module.modulemap`路径 `"$(SRCROOT)/SwiftySdk"`
+- Xcode16+ 请主动设置 `install generated header` 为`YES` 否则报错`Command SwiftVerifyEmittedModuleInterface failed with a nonzero exit code`
 
 ##### 2、提供的oc、swift混编私有.framework是动态库
 
