@@ -19,22 +19,22 @@
   <meta name="author" content="FIRF27">
   <meta name="keywords" content="">
   
-    <meta name="description" content="使用jar命令替换jar包中指定文件替换jar包中指定文件1. 列出指定文件的路径123jar -tvf xxx.jar | grep abc.class # 输出结果示例 BOOT-INF&#x2F;classes&#x2F;com&#x2F;netinfo&#x2F;system&#x2F;service&#x2F;device&#x2F;impl&#x2F;abc.class  2. 解压指定路径下的文件1234jar -xvf xxx.jar &#x2F;path&#x2F;to&#x2F;jar">
+    <meta name="description" content="麒麟V10服务器升级OpenSSH 服务器架设在本地局域网，无法访问外网。 为修复OpenSSH漏洞,需要升级OpenSSH  下载所有依赖包 openssh-9.8p1.tar.gz openssl-3.3.1.tar.gz zlib-1.3.1.tar.gz  脚本正文123456789101112131415161718192021222324252627282930313233343536">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用jar命令替换jar包中指定文件">
-<meta property="og:url" content="http://example.com/2025/03/18/%E4%BD%BF%E7%94%A8jar%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2jar%E5%8C%85%E4%B8%AD%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6/index.html">
+<meta property="og:title" content="服务器升级OpenSSH脚本">
+<meta property="og:url" content="http://example.com/2025/04/29/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8D%87%E7%BA%A7OpenSSH%E8%84%9A%E6%9C%AC/index.html">
 <meta property="og:site_name" content="FIRF">
-<meta property="og:description" content="使用jar命令替换jar包中指定文件替换jar包中指定文件1. 列出指定文件的路径123jar -tvf xxx.jar | grep abc.class # 输出结果示例 BOOT-INF&#x2F;classes&#x2F;com&#x2F;netinfo&#x2F;system&#x2F;service&#x2F;device&#x2F;impl&#x2F;abc.class  2. 解压指定路径下的文件1234jar -xvf xxx.jar &#x2F;path&#x2F;to&#x2F;jar">
+<meta property="og:description" content="麒麟V10服务器升级OpenSSH 服务器架设在本地局域网，无法访问外网。 为修复OpenSSH漏洞,需要升级OpenSSH  下载所有依赖包 openssh-9.8p1.tar.gz openssl-3.3.1.tar.gz zlib-1.3.1.tar.gz  脚本正文123456789101112131415161718192021222324252627282930313233343536">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-18T09:53:47.000Z">
-<meta property="article:modified_time" content="2025-03-31T02:54:46.425Z">
+<meta property="article:published_time" content="2025-04-29T06:56:58.000Z">
+<meta property="article:modified_time" content="2025-04-29T07:26:58.900Z">
 <meta property="article:author" content="FIRF27">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>使用jar命令替换jar包中指定文件 - FIRF</title>
+  <title>服务器升级OpenSSH脚本 - FIRF</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="使用jar命令替换jar包中指定文件"></span>
+            <span id="subtitle" data-typed-text="服务器升级OpenSSH脚本"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-18 17:53" pubdate>
-          2025年3月18日 下午
+        <time datetime="2025-04-29 14:56" pubdate>
+          2025年4月29日 下午
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          193 字
+          412 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          2 分钟
+          4 分钟
         
       </span>
     
@@ -271,22 +271,35 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">使用jar命令替换jar包中指定文件</h1>
+            <h1 id="seo-header">服务器升级OpenSSH脚本</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="使用jar命令替换jar包中指定文件"><a href="#使用jar命令替换jar包中指定文件" class="headerlink" title="使用jar命令替换jar包中指定文件"></a>使用jar命令替换jar包中指定文件</h1><h3 id="替换jar包中指定文件"><a href="#替换jar包中指定文件" class="headerlink" title="替换jar包中指定文件"></a>替换jar包中指定文件</h3><h4 id="1-列出指定文件的路径"><a href="#1-列出指定文件的路径" class="headerlink" title="1. 列出指定文件的路径"></a>1. 列出指定文件的路径</h4><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle">jar -tvf xxx.jar | <span class="hljs-keyword">grep</span> abc.<span class="hljs-keyword">class</span><br><br> # 输出结果示例 BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device<span class="hljs-regexp">/impl/</span>abc.<span class="hljs-keyword">class</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="2-解压指定路径下的文件"><a href="#2-解压指定路径下的文件" class="headerlink" title="2. 解压指定路径下的文件"></a>2. 解压指定路径下的文件</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gradle">jar -xvf xxx.jar <span class="hljs-regexp">/path/</span>to<span class="hljs-regexp">/jar/</span><span class="hljs-keyword">file</span>/location<br><br>eg. <br>jar -xvf xxx.jar BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device<span class="hljs-regexp">/impl/</span>abc.<span class="hljs-keyword">class</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="3-替换解压目录的下的文件"><a href="#3-替换解压目录的下的文件" class="headerlink" title="3. 替换解压目录的下的文件"></a>3. 替换解压目录的下的文件</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle">mv -i abc.<span class="hljs-keyword">class</span> BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device<span class="hljs-regexp">/impl/</span>abc.<span class="hljs-keyword">class</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="4-更新到jar包中"><a href="#4-更新到jar包中" class="headerlink" title="4. 更新到jar包中"></a>4. 更新到jar包中</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs gradle">jar -uvf xxx.jar <span class="hljs-regexp">/path/</span>to<span class="hljs-regexp">/jar/</span><span class="hljs-keyword">file</span>/location<br><br>eg.<br>jar -xvf xxx.jar BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device<span class="hljs-regexp">/impl/</span>abc.<span class="hljs-keyword">class</span><br><br># 如果一次替换多个文件, 直接拼接多个文件地址<br>eg. <br>jar -xvf xxx.jar BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device<span class="hljs-regexp">/impl/</span>abc.<span class="hljs-keyword">class</span> BOOT-INF<span class="hljs-regexp">/classes/</span>com<span class="hljs-regexp">/netinfo/</span>system<span class="hljs-regexp">/service/</span>device<span class="hljs-regexp">/impl/</span>efg.<span class="hljs-keyword">class</span><br><br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果替换的文件名带有<code>$</code>, 需将<code>$</code>转义.  <code>$</code>前加<code>\</code></p>
+                <h1 id="麒麟V10服务器升级OpenSSH"><a href="#麒麟V10服务器升级OpenSSH" class="headerlink" title="麒麟V10服务器升级OpenSSH"></a>麒麟V10服务器升级OpenSSH</h1><blockquote>
+<p>服务器架设在本地局域网，无法访问外网。 为修复OpenSSH漏洞,需要升级OpenSSH</p>
 </blockquote>
+<h2 id="下载所有依赖包"><a href="#下载所有依赖包" class="headerlink" title="下载所有依赖包"></a>下载所有依赖包</h2><ul>
+<li>openssh-9.8p1.tar.gz</li>
+<li>openssl-3.3.1.tar.gz</li>
+<li>zlib-1.3.1.tar.gz</li>
+</ul>
+<h2 id="脚本正文"><a href="#脚本正文" class="headerlink" title="脚本正文"></a>脚本正文</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><br><span class="hljs-built_in">cd</span> /opt<br>tar -zxf zlib-1.3.1.tar.gz<br><span class="hljs-built_in">cd</span> zlib-1.3.1<br><span class="hljs-comment">#检查配置并设置安装路径</span><br>./configure --prefix=/usr/local/zlib<br><span class="hljs-comment">#编译安装</span><br>make &amp;&amp; make install<br><br><span class="hljs-built_in">cd</span> /opt<br>tar -zxf openssl-3.3.1.tar.gz<br><span class="hljs-built_in">cd</span> openssl-3.3.1<br>./Configure --prefix=/usr/local/openssl<br><span class="hljs-comment">#允许4个核心编译，速度快</span><br>make -j 4 &amp;&amp; make install<br><span class="hljs-comment">#让系统能够找到并加载 OpenSSL 库</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;/usr/local/openssl/lib&quot;</span> &gt;&gt; /etc/ld.so.conf<br><span class="hljs-comment">#应用库配置</span><br>ldconfig<br><br><span class="hljs-built_in">cd</span> /opt<br>tar -zxf openssh-9.8p1.tar.gz<br><span class="hljs-built_in">cd</span> openssh-9.8p1/<br><span class="hljs-comment">#备份</span><br><span class="hljs-built_in">mv</span> /etc/ssh /etc/ssh_old.bak<br><span class="hljs-built_in">mv</span>  /usr/bin/ssh /usr/bin/ssh_old.bak<br><span class="hljs-built_in">mv</span>  /usr/bin/ssh-keygen /usr/bin/ssh-keygen_old.bak<br><span class="hljs-built_in">mv</span>  /usr/sbin/sshd /usr/sbin/sshd_old.bak<br><span class="hljs-built_in">cp</span> /etc/pam.d/sshd /etc/pam.d/sshd_old.bak<br>./configure --prefix=/usr/local/openssh --sysconfdir=/etc/ssh --with-pam --with-ssl-dir=/usr/local/openssl --with-zlib=/usr/local/zlib<br>make &amp;&amp; make install<br><br><span class="hljs-built_in">chown</span> -R root:root /etc/ssh<br><span class="hljs-built_in">chmod</span> 600 /etc/ssh/*_key<br><span class="hljs-comment">#更新系统服务和配置文件</span><br><span class="hljs-built_in">cp</span> /usr/local/openssh/sbin/sshd /usr/sbin/sshd<br><span class="hljs-built_in">cp</span> /usr/local/openssh/bin/ssh /usr/bin/ssh<br><span class="hljs-built_in">cp</span> /usr/local/openssh/bin/ssh-keygen /usr/bin/ssh-keygen<br><span class="hljs-built_in">cp</span> -p contrib/redhat/sshd.init /etc/init.d/sshd<br><span class="hljs-built_in">chmod</span> +x /etc/init.d/sshd<br><br> <span class="hljs-comment">#执行前，请确认sshd_config路径</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;PermitRootLogin yes&#x27;</span> &gt;&gt; /etc/ssh/sshd_config<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;PubkeyAuthentication yes&#x27;</span> &gt;&gt; /etc/ssh/sshd_config<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;PasswordAuthentication yes&#x27;</span> &gt;&gt; /etc/ssh/sshd_config<br><br><br>systemctl <span class="hljs-built_in">enable</span> --now sshd<br><span class="hljs-comment">#重启ssh服务</span><br>systemctl restart sshd<br><br>ssh -V<br><br></code></pre></td></tr></table></figure>
+
+<p>新建文件<code>updateOpenSSH.sh</code>, 将上面内容复制进去</p>
+<h2 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h2><p>将上面4个文件<code>openssh-9.8p1.tar.gz</code> <code>openssl-3.3.1.tar.gz</code> <code>zlib-1.3.1.tar.gz</code> <code>updateOpenSSH.sh</code>通过U盘拷贝到服务器<code>/opt</code>路径下</p>
+<p>给<code>updateOpenSSH.sh</code>执行权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x updateOpenSSH.sh<br></code></pre></td></tr></table></figure>
+
+<p>执行脚本</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">sh</span> updateOpenSSH.<span class="hljs-keyword">sh</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="验证版本"><a href="#验证版本" class="headerlink" title="验证版本"></a>验证版本</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">sshd</span> -V<br><span class="hljs-comment"># 如果输出9.8p1 那么就是成功了!</span><br></code></pre></td></tr></table></figure>
+
+
+
+
+
 
                 
               </div>
@@ -305,7 +318,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
   
   
 
@@ -320,7 +333,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java/" class="print-no-link">#Java</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -332,8 +345,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>使用jar命令替换jar包中指定文件</div>
-      <div>http://example.com/2025/03/18/使用jar命令替换jar包中指定文件/</div>
+      <div>服务器升级OpenSSH脚本</div>
+      <div>http://example.com/2025/04/29/服务器升级OpenSSH脚本/</div>
     </div>
     <div class="license-meta">
       
@@ -345,7 +358,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年3月18日</div>
+          <div>2025年4月29日</div>
         </div>
       
       
@@ -377,18 +390,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/29/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8D%87%E7%BA%A7OpenSSH%E8%84%9A%E6%9C%AC/" title="服务器升级OpenSSH脚本">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">服务器升级OpenSSH脚本</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/07/Mac%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="Mac搭建Java开发环境">
-                        <span class="hidden-mobile">Mac搭建Java开发环境</span>
+                      <a href="/2025/03/18/%E4%BD%BF%E7%94%A8jar%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2jar%E5%8C%85%E4%B8%AD%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6/" title="使用jar命令替换jar包中指定文件">
+                        <span class="hidden-mobile">使用jar命令替换jar包中指定文件</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
