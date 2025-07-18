@@ -19,15 +19,15 @@
   <meta name="author" content="FIRF27">
   <meta name="keywords" content="">
   
-    <meta name="description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4  m3u8与MP4格式互转：      1234567891011$ ffmepg -i http:&#x2F;&#x2F;localhost:8000&#x2F;input">
+    <meta name="description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4  m3u8与MP4格式互转：      1234567891011121314151617# 查看文件编码信息$ ffmpeg -i input">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用ffmpeg命令">
 <meta property="og:url" content="http://example.com/2025/07/18/%E5%B8%B8%E7%94%A8FFmpeg%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="FIRF">
-<meta property="og:description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4  m3u8与MP4格式互转：      1234567891011$ ffmepg -i http:&#x2F;&#x2F;localhost:8000&#x2F;input">
+<meta property="og:description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4  m3u8与MP4格式互转：      1234567891011121314151617# 查看文件编码信息$ ffmpeg -i input">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-18T02:05:30.000Z">
-<meta property="article:modified_time" content="2025-07-18T07:09:00.409Z">
+<meta property="article:modified_time" content="2025-07-18T08:27:04.190Z">
 <meta property="article:author" content="FIRF27">
 <meta property="article:tag" content="ffmpeg">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          730 字
+          767 字
         
       </span>
     
@@ -287,7 +287,7 @@
 <li><p><strong>m3u8与MP4格式互转：</strong></p>
 </li>
 </ol>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">ffmepg -i http://localhost:8000/input.m3u8 -c copy output.mp4</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">hls_time 切片时间间隔</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">切片时间最优</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">ffmpeg -i input.mp4 -c:v libx264 -c:a aac -hls_time \</span><br><span class="language-bash">10 -hls_list_size 0 -hls_segment_filename <span class="hljs-string">&quot;output_%03d.ts&quot;</span> output.m3u8</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-crf 18: 恒定质量模式,值越小质量越高(18~23是高质量范围, 18接近无损)</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-preset slow: 编码速度与压缩率的平衡,slow比medium压缩率更高,质量更好（但更慢</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-b:a 192k: 音频码率设为 192 kbps(比默认128k更高, 提升音质)</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">ffmpeg -i input.mp4 -c:v libx264 -crf 18 -preset slow -c:a aac -b:a 192k -hls_time 5 -hls_list_size 0 -hls_segment_filename <span class="hljs-string">&quot;output_%03d.ts&quot;</span> output.m3u8</span><br></code></pre></td></tr></table></figure>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">查看文件编码信息</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">ffmpeg -i input.m3u8</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">!!!判断m3u8文件是否加密 ==&gt;&gt; 文件包含#EXT-X-KEY 标签, 则已加密</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">m3u8转mp4</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">ffmepg -i http://localhost:8000/input.m3u8 -c copy output.mp4</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">hls_time 切片时间间隔</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">切片时间最优</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">ffmpeg -i input.mp4 -c:v libx264 -c:a aac -hls_time \</span><br><span class="language-bash">10 -hls_list_size 0 -hls_segment_filename <span class="hljs-string">&quot;output_%03d.ts&quot;</span> output.m3u8</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-crf 18: 恒定质量模式,值越小质量越高(18~23是高质量范围, 18接近无损)</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-preset slow: 编码速度与压缩率的平衡,slow比medium压缩率更高,质量更好（但更慢</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-b:a 192k: 音频码率设为 192 kbps(比默认128k更高, 提升音质)</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">ffmpeg -i input.mp4 -c:v libx264 -crf 18 -preset slow -c:a aac -b:a 192k -hls_time 5 -hls_list_size 0 -hls_segment_filename <span class="hljs-string">&quot;output_%03d.ts&quot;</span> output.m3u8</span><br></code></pre></td></tr></table></figure>
 <h2 id="二、FFmpeg-全局与主要选项"><a href="#二、FFmpeg-全局与主要选项" class="headerlink" title="二、FFmpeg 全局与主要选项"></a>二、FFmpeg 全局与主要选项</h2><ul>
 <li>• <strong>-y</strong>：覆盖输出文件</li>
 <li>• <strong>-n</strong>：不要覆盖输出文件</li>
