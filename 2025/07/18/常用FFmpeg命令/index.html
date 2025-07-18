@@ -19,15 +19,15 @@
   <meta name="author" content="FIRF27">
   <meta name="keywords" content="">
   
-    <meta name="description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4  3 ** m3u8与MP4格式互转： **    1234$ ffmepg -i http:&#x2F;&#x2F;localhost:8000&#x2F;input.m3">
+    <meta name="description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4 **m3u8与MP4格式互转： ** 1234$ ffmepg -i http:&#x2F;&#x2F;localhost:8000&#x2F;input.m3u8 -c c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用ffmpeg命令">
 <meta property="og:url" content="http://example.com/2025/07/18/%E5%B8%B8%E7%94%A8FFmpeg%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="FIRF">
-<meta property="og:description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4  3 ** m3u8与MP4格式互转： **    1234$ ffmepg -i http:&#x2F;&#x2F;localhost:8000&#x2F;input.m3">
+<meta property="og:description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4 **m3u8与MP4格式互转： ** 1234$ ffmepg -i http:&#x2F;&#x2F;localhost:8000&#x2F;input.m3u8 -c c">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-18T02:05:30.000Z">
-<meta property="article:modified_time" content="2025-07-18T02:05:58.268Z">
+<meta property="article:modified_time" content="2025-07-18T03:48:16.801Z">
 <meta property="article:author" content="FIRF27">
 <meta property="article:tag" content="ffmpeg">
 <meta name="twitter:card" content="summary_large_image">
@@ -283,9 +283,9 @@
 </li>
 <li><p><strong>将 WebM 转换为 MP4 格式：</strong></p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -<span class="hljs-selector-tag">i</span> movie<span class="hljs-selector-class">.webm</span> movie.mp4<br></code></pre></td></tr></table></figure></li>
+<li><p>**m3u8与MP4格式互转： **</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmepg -<span class="hljs-selector-tag">i</span> http:<span class="hljs-comment">//localhost:8000/input.m3u8 -c copy output.mp4</span><br><br><span class="hljs-comment">// hls_time 切片时间间隔</span><br>$ ffmpeg -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.mp4</span> -c:v libx264 -c:<span class="hljs-selector-tag">a</span> aac -hls_time <span class="hljs-number">10</span> -hls_list_size <span class="hljs-number">0</span> -hls_segment_filename <span class="hljs-string">&quot;output_%03d.ts&quot;</span> output.m3u8<br></code></pre></td></tr></table></figure></li>
 </ol>
-<p>3 ** m3u8与MP4格式互转： **</p>
-   <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmepg -<span class="hljs-selector-tag">i</span> http:<span class="hljs-comment">//localhost:8000/input.m3u8 -c copy output.mp4</span><br><br><span class="hljs-comment">// hls_time 切片时间间隔</span><br>$ ffmpeg -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.mp4</span> -c:v libx264 -c:<span class="hljs-selector-tag">a</span> aac -hls_time <span class="hljs-number">10</span> -hls_list_size <span class="hljs-number">0</span> -hls_segment_filename <span class="hljs-string">&quot;output_%03d.ts&quot;</span> output.m3u8<br></code></pre></td></tr></table></figure>
 <h2 id="二、FFmpeg-全局与主要选项"><a href="#二、FFmpeg-全局与主要选项" class="headerlink" title="二、FFmpeg 全局与主要选项"></a>二、FFmpeg 全局与主要选项</h2><ul>
 <li>• <strong>-y</strong>：覆盖输出文件。</li>
 <li>• <strong>-n</strong>：不要覆盖输出文件。</li>
@@ -322,7 +322,7 @@
 <h2 id="七、特定任务场景"><a href="#七、特定任务场景" class="headerlink" title="七、特定任务场景"></a>七、特定任务场景</h2><h3 id="1-转换为-GIF-动图"><a href="#1-转换为-GIF-动图" class="headerlink" title="1. 转换为 GIF 动图"></a>1. 转换为 GIF 动图</h3><p>截取视频片段生成 GIF：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -ss <span class="hljs-number">2</span> -t <span class="hljs-number">5</span> -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.mp4</span> -vf <span class="hljs-string">&quot;fps=10,scale=320:-1&quot;</span> output.gif<br></code></pre></td></tr></table></figure>
 
-<h3 id="2-提取视频中的音频"><a href="#2-提取视频中的音频" class="headerlink" title="2. 提取视频中的音频"></a>2. 提取视频中的音频</h3><p>   从视频中提取音频并保存为 mp3 格式：</p>
+<h3 id="2-提取视频中的音频"><a href="#2-提取视频中的音频" class="headerlink" title="2. 提取视频中的音频"></a>2. 提取视频中的音频</h3><p> 从视频中提取音频并保存为 mp3 格式：</p>
    <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.mp4</span> -vn -c copy output.mp3<br></code></pre></td></tr></table></figure>
 
 <h3 id="3-合并多个视频文件"><a href="#3-合并多个视频文件" class="headerlink" title="3. 合并多个视频文件"></a>3. 合并多个视频文件</h3><p>将多个同规格视频合并到一个文件中（确保视频格式一致）：</p>
