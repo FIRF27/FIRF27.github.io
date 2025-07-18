@@ -28,6 +28,12 @@ date: 2025-07-18 10:05:30
 3.  **m3u8与MP4格式互转：**
 
    ```
+   # 查看文件编码信息
+   $ ffmpeg -i input.m3u8
+   
+   # !!!判断m3u8文件是否加密 ==>> 文件包含#EXT-X-KEY 标签, 则已加密
+   
+   # m3u8转mp4
    $ ffmepg -i http://localhost:8000/input.m3u8 -c copy output.mp4
    
    # hls_time 切片时间间隔
