@@ -19,15 +19,15 @@
   <meta name="author" content="FIRF27">
   <meta name="keywords" content="">
   
-    <meta name="description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4 **m3u8与MP4格式互转： ** 1234$ ffmepg -i http:&#x2F;&#x2F;localhost:8000&#x2F;input.m3u8 -c c">
+    <meta name="description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4  m3u8与MP4格式互转：      1234567891011$ ffmepg -i http:&#x2F;&#x2F;localhost:8000&#x2F;input">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用ffmpeg命令">
 <meta property="og:url" content="http://example.com/2025/07/18/%E5%B8%B8%E7%94%A8FFmpeg%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="FIRF">
-<meta property="og:description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4 **m3u8与MP4格式互转： ** 1234$ ffmepg -i http:&#x2F;&#x2F;localhost:8000&#x2F;input.m3u8 -c c">
+<meta property="og:description" content="常用FFmpeg命令一、格式转换常用示例 将 MP4 转换为 AVI 格式： 1$ ffmpeg -i input.mp4 output.avi   将 WebM 转换为 MP4 格式： 1$ ffmpeg -i movie.webm movie.mp4  m3u8与MP4格式互转：      1234567891011$ ffmepg -i http:&#x2F;&#x2F;localhost:8000&#x2F;input">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-18T02:05:30.000Z">
-<meta property="article:modified_time" content="2025-07-18T03:48:31.520Z">
+<meta property="article:modified_time" content="2025-07-18T07:09:00.409Z">
 <meta property="article:author" content="FIRF27">
 <meta property="article:tag" content="ffmpeg">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          563 字
+          730 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          5 分钟
+          7 分钟
         
       </span>
     
@@ -282,15 +282,17 @@
 
 </li>
 <li><p><strong>将 WebM 转换为 MP4 格式：</strong></p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -<span class="hljs-selector-tag">i</span> movie<span class="hljs-selector-class">.webm</span> movie.mp4<br></code></pre></td></tr></table></figure></li>
-<li><p>**m3u8与MP4格式互转： **</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmepg -<span class="hljs-selector-tag">i</span> http:<span class="hljs-comment">//localhost:8000/input.m3u8 -c copy output.mp4</span><br><br><span class="hljs-comment">// hls_time 切片时间间隔</span><br>$ ffmpeg -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.mp4</span> -c:v libx264 -c:<span class="hljs-selector-tag">a</span> aac -hls_time <span class="hljs-number">10</span> -hls_list_size <span class="hljs-number">0</span> -hls_segment_filename <span class="hljs-string">&quot;output_%03d.ts&quot;</span> output.m3u8<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -<span class="hljs-selector-tag">i</span> movie<span class="hljs-selector-class">.webm</span> movie.mp4<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>m3u8与MP4格式互转：</strong></p>
+</li>
 </ol>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">ffmepg -i http://localhost:8000/input.m3u8 -c copy output.mp4</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">hls_time 切片时间间隔</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">切片时间最优</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">ffmpeg -i input.mp4 -c:v libx264 -c:a aac -hls_time \</span><br><span class="language-bash">10 -hls_list_size 0 -hls_segment_filename <span class="hljs-string">&quot;output_%03d.ts&quot;</span> output.m3u8</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-crf 18: 恒定质量模式,值越小质量越高(18~23是高质量范围, 18接近无损)</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-preset slow: 编码速度与压缩率的平衡,slow比medium压缩率更高,质量更好（但更慢</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-b:a 192k: 音频码率设为 192 kbps(比默认128k更高, 提升音质)</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">ffmpeg -i input.mp4 -c:v libx264 -crf 18 -preset slow -c:a aac -b:a 192k -hls_time 5 -hls_list_size 0 -hls_segment_filename <span class="hljs-string">&quot;output_%03d.ts&quot;</span> output.m3u8</span><br></code></pre></td></tr></table></figure>
 <h2 id="二、FFmpeg-全局与主要选项"><a href="#二、FFmpeg-全局与主要选项" class="headerlink" title="二、FFmpeg 全局与主要选项"></a>二、FFmpeg 全局与主要选项</h2><ul>
-<li>• <strong>-y</strong>：覆盖输出文件。</li>
-<li>• <strong>-n</strong>：不要覆盖输出文件。</li>
-<li>• <strong>-f fmt</strong>：强制输入或输出文件格式。</li>
-<li>• <strong>-c codecName</strong>：指定编解码器，适用于输入和输出文件。</li>
+<li>• <strong>-y</strong>：覆盖输出文件</li>
+<li>• <strong>-n</strong>：不要覆盖输出文件</li>
+<li>• <strong>-f fmt</strong>：强制输入或输出文件格式</li>
+<li>• <strong>-c codecName</strong>：指定编解码器, 适用于输入和输出文件</li>
 </ul>
 <h2 id="三、基础命令"><a href="#三、基础命令" class="headerlink" title="三、基础命令"></a>三、基础命令</h2><ol>
 <li><p><strong>列出可用编码格式：</strong></p>
@@ -300,24 +302,28 @@
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.mp4</span> -c:v libx264 -c:<span class="hljs-selector-tag">a</span> aac output.mp4<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="四、视频参数调节"><a href="#四、视频参数调节" class="headerlink" title="四、视频参数调节"></a>四、视频参数调节</h2><ol>
-<li><p><strong>设置比特率</strong>：指定视频比特率，单位 kbit&#x2F;s。</p>
+<li><p><strong>设置比特率</strong>：指定视频比特率，单位 kbit&#x2F;s</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.avi</span> -<span class="hljs-selector-tag">b</span>:v <span class="hljs-number">64</span>k -bufsize <span class="hljs-number">64</span>k output.avi<br></code></pre></td></tr></table></figure>
 </li>
 <li><p><strong>指定分辨率与帧率：</strong></p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lua">$ ffmpeg -i <span class="hljs-built_in">input</span>.avi -s <span class="hljs-number">1280</span>x720 -r <span class="hljs-number">30</span> <span class="hljs-built_in">output</span>.avi<br></code></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="五、视频编辑与剪辑"><a href="#五、视频编辑与剪辑" class="headerlink" title="五、视频编辑与剪辑"></a>五、视频编辑与剪辑</h2><h3 id="1-剪切视频片段"><a href="#1-剪切视频片段" class="headerlink" title="1. 剪切视频片段"></a>1. 剪切视频片段</h3><p>将视频从指定时间开始，剪切一段视频：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.mp4</span> -ss <span class="hljs-number">00</span>:<span class="hljs-number">01</span>:<span class="hljs-number">45</span> -t <span class="hljs-number">00</span>:<span class="hljs-number">02</span>:<span class="hljs-number">35</span> -c copy output.mp4<br></code></pre></td></tr></table></figure>
+<h2 id="五、视频编辑与剪辑"><a href="#五、视频编辑与剪辑" class="headerlink" title="五、视频编辑与剪辑"></a>五、视频编辑与剪辑</h2><ol>
+<li>剪切视频片段</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 将视频从指定时间开始，剪切一段视频：</span><br><span class="hljs-variable">$</span> ffmpeg <span class="hljs-literal">-i</span> input.mp4 <span class="hljs-literal">-ss</span> <span class="hljs-number">00</span>:<span class="hljs-number">01</span>:<span class="hljs-number">45</span> <span class="hljs-literal">-t</span> <span class="hljs-number">00</span>:<span class="hljs-number">02</span>:<span class="hljs-number">35</span> <span class="hljs-literal">-c</span> <span class="hljs-built_in">copy</span> output.mp4<br></code></pre></td></tr></table></figure>
 
-<h3 id="2-调整视频帧速率"><a href="#2-调整视频帧速率" class="headerlink" title="2. 调整视频帧速率"></a>2. 调整视频帧速率</h3><p>强制视频帧率为 24 fps：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lua">$ ffmpeg -i <span class="hljs-built_in">input</span>.avi -r <span class="hljs-number">24</span> <span class="hljs-built_in">output</span>.avi<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>调整视频帧速率</li>
+</ol>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-comment"># 强制视频帧率为 24 fps：</span><br><span class="hljs-variable">$ </span>ffmpeg -i input.avi -r <span class="hljs-number">24</span> output.avi<br></code></pre></td></tr></table></figure>
 
 <h2 id="六、音频参数调节"><a href="#六、音频参数调节" class="headerlink" title="六、音频参数调节"></a>六、音频参数调节</h2><ol>
 <li><p><strong>设置音频比特率：</strong></p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.mp4</span> -ab <span class="hljs-number">128</span>k output.mp3<br></code></pre></td></tr></table></figure>
 </li>
 <li><p><strong>修改音量：</strong></p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">$ ffmpeg -i input.mov -<span class="hljs-built_in">filter</span>:<span class="hljs-keyword">a</span> <span class="hljs-string">&quot;volume=1.5&quot;</span> output.mov   <span class="hljs-comment"># 增加音量</span><br></code></pre></td></tr></table></figure></li>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver"><span class="hljs-comment"># 增加音量</span><br>$ ffmpeg -i input.mov -<span class="hljs-built_in">filter</span>:<span class="hljs-keyword">a</span> <span class="hljs-string">&quot;volume=1.5&quot;</span> output.mov  <br></code></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="七、特定任务场景"><a href="#七、特定任务场景" class="headerlink" title="七、特定任务场景"></a>七、特定任务场景</h2><h3 id="1-转换为-GIF-动图"><a href="#1-转换为-GIF-动图" class="headerlink" title="1. 转换为 GIF 动图"></a>1. 转换为 GIF 动图</h3><p>截取视频片段生成 GIF：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -ss <span class="hljs-number">2</span> -t <span class="hljs-number">5</span> -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.mp4</span> -vf <span class="hljs-string">&quot;fps=10,scale=320:-1&quot;</span> output.gif<br></code></pre></td></tr></table></figure>
@@ -326,7 +332,7 @@
    <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">$ ffmpeg -<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.mp4</span> -vn -c copy output.mp3<br></code></pre></td></tr></table></figure>
 
 <h3 id="3-合并多个视频文件"><a href="#3-合并多个视频文件" class="headerlink" title="3. 合并多个视频文件"></a>3. 合并多个视频文件</h3><p>将多个同规格视频合并到一个文件中（确保视频格式一致）：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-meta"># 列表文件 mylist.txt 格式示例</span><br><span class="hljs-keyword">file</span> <span class="hljs-string">&#x27;1.mp4&#x27;</span><br><span class="hljs-keyword">file</span> <span class="hljs-string">&#x27;2.mp4&#x27;</span><br><span class="hljs-keyword">file</span> <span class="hljs-string">&#x27;3.mp4&#x27;</span><br><br><span class="hljs-meta"># 合并命令</span><br>$ ffmpeg -f concat -i mylist.txt -c copy output.mp4<br></code></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-meta"># 列表文件 videos.txt 格式示例</span><br><span class="hljs-keyword">file</span> <span class="hljs-string">&#x27;1.mp4&#x27;</span><br><span class="hljs-keyword">file</span> <span class="hljs-string">&#x27;2.mp4&#x27;</span><br><span class="hljs-keyword">file</span> <span class="hljs-string">&#x27;3.mp4&#x27;</span><br><br><span class="hljs-meta"># 合并命令</span><br>$ ffmpeg -f concat -i videos.txt -c copy output.mp4<br></code></pre></td></tr></table></figure>
 
 <h2 id="八、视频压缩与编码"><a href="#八、视频压缩与编码" class="headerlink" title="八、视频压缩与编码"></a>八、视频压缩与编码</h2><h4 id="H265-双重编码"><a href="#H265-双重编码" class="headerlink" title="H265 双重编码"></a>H265 双重编码</h4><figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sas">$ ffmpeg -y -i <span class="hljs-keyword">input</span>.mp4 -c:v libx265 -b:v 2600k -pass 1 -f mp4 /dev/<span class="hljs-keyword">null</span> <span class="hljs-variable">&amp;&amp;</span> \<br>  ffmpeg -i <span class="hljs-keyword">input</span>.mp4 -c:v libx265 -b:v 2600k -pass 2 <span class="hljs-keyword">output</span>.mp4<br></code></pre></td></tr></table></figure>
 
@@ -337,6 +343,14 @@
 <h2 id="十、录屏操作"><a href="#十、录屏操作" class="headerlink" title="十、录屏操作"></a>十、录屏操作</h2><h3 id="MacOS-录屏"><a href="#MacOS-录屏" class="headerlink" title="MacOS 录屏"></a>MacOS 录屏</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$</span> ffmpeg <span class="hljs-operator">-f</span> avfoundation <span class="hljs-literal">-i</span> <span class="hljs-number">1</span>:<span class="hljs-number">0</span> <span class="hljs-literal">-preset</span> ultrafast screen_recording.mkv<br></code></pre></td></tr></table></figure>
 
 <h3 id="Windows-录屏"><a href="#Windows-录屏" class="headerlink" title="Windows 录屏"></a>Windows 录屏</h3><figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tap">$ ffmpeg -hide_banner -loglevel error -stats -f gdigrab -framerate<span class="hljs-number"> 60 </span>\<br>-offset_x<span class="hljs-number"> 0 </span>-offset_y<span class="hljs-number"> 0 </span>-video_size 1920x1080 -draw_mouse<span class="hljs-number"> 1 </span>-i deskop \<br>-c:v libx264 -r<span class="hljs-number"> 60 </span>-preset ultrafast -pix_fmt yuv420p -y screen_record.mp4<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="ffprobe常见命令"><a href="#ffprobe常见命令" class="headerlink" title="ffprobe常见命令"></a>ffprobe常见命令</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment"># 获取input.mp4的编码格式 eg. h264、hevc.</span><br>$ ffprobe -v <span class="hljs-built_in">error</span> -select_streams v:0 -show_entries <span class="hljs-attribute">stream</span>=codec_name -of <span class="hljs-attribute">default</span>=noprint_wrappers=1:nokey=1 input.mp4<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment"># 获取input.mp4音频编码格式 eg. aac、mp3</span><br>$ ffprobe -v <span class="hljs-built_in">error</span> -select_streams a:0 -show_entries <span class="hljs-attribute">stream</span>=codec_name -of <span class="hljs-attribute">default</span>=noprint_wrappers=1:nokey=1 input.mp4<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment"># 获取关键帧间隔</span><br>$ ffprobe -v <span class="hljs-built_in">error</span> -select_streams v:0 -show_entries <span class="hljs-attribute">frame</span>=pict_type -of csv input.mp4 | grep -c <span class="hljs-string">&quot;I&quot;</span><br></code></pre></td></tr></table></figure>
 
 
                 
