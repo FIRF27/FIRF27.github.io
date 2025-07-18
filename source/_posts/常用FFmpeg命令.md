@@ -24,11 +24,11 @@ date: 2025-07-18 10:05:30
    ```
    $ ffmpeg -i movie.webm movie.mp4
    ```
-3 ** m3u8与MP4格式互转： **
+3. **m3u8与MP4格式互转： **
 
    ```
    $ ffmepg -i http://localhost:8000/input.m3u8 -c copy output.mp4
-
+   
    // hls_time 切片时间间隔
    $ ffmpeg -i input.mp4 -c:v libx264 -c:a aac -hls_time 10 -hls_list_size 0 -hls_segment_filename "output_%03d.ts" output.m3u8
    ```
@@ -111,7 +111,7 @@ $ ffmpeg -ss 2 -t 5 -i input.mp4 -vf "fps=10,scale=320:-1" output.gif
 
 ### 2. 提取视频中的音频
 
-   从视频中提取音频并保存为 mp3 格式：
+ 从视频中提取音频并保存为 mp3 格式：
 
    ```
    $ ffmpeg -i input.mp4 -vn -c copy output.mp3
