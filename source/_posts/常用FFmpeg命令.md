@@ -33,13 +33,12 @@ date: 2025-07-18 10:05:30
    
    # !!!判断m3u8文件是否加密 ==>> 文件包含#EXT-X-KEY 标签, 则已加密
    
-   # m3u8转mp4
-   $ ffmepg -i http://localhost:8000/input.m3u8 -c copy output.mp4
+   # m3u8转mp4(网络下载m3u8保存为output.mp4)
+   $ ffmepg -i "http://localhost:8000/input.m3u8" -c copy output.mp4
    
    # hls_time 切片时间间隔
    # 切片时间最优
-   $ ffmpeg -i input.mp4 -c:v libx264 -c:a aac -hls_time \
-   10 -hls_list_size 0 -hls_segment_filename "output_%03d.ts" output.m3u8
+   $ ffmpeg -i input.mp4 -c:v libx264 -c:a aac -hls_time 10 -hls_list_size 0 -hls_segment_filename "output_%03d.ts" output.m3u8
    
    # -crf 18: 恒定质量模式,值越小质量越高(18~23是高质量范围, 18接近无损)
    # -preset slow: 编码速度与压缩率的平衡,slow比medium压缩率更高,质量更好（但更慢
