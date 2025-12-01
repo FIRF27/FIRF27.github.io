@@ -27,7 +27,7 @@
 <meta property="og:description" content="iOS动态调试-逆向04LLDB最老版本的Xcode的调试器是GDB后来苹果就在这基础上开发了LLDB现在LLDB都是内嵌在Xcode中 Xcode的调试原理当我们在手机上连接Xcode进行真机调试的时候,Xcode识别手机后会将debug server安装到我们的手机上 (&#x2F;Developer&#x2F;usr&#x2F;bin&#x2F;debugserver)  debugserv">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-07T05:42:39.000Z">
-<meta property="article:modified_time" content="2025-03-07T06:43:03.446Z">
+<meta property="article:modified_time" content="2025-12-01T03:12:52.076Z">
 <meta property="article:author" content="FIRF27">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="逆向">
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          641 字
+          651 字
         
       </span>
     
@@ -327,7 +327,7 @@
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arduino">#由于上面的映射，直接连接本地的<span class="hljs-number">10011</span>端口<br>process connect connect:<span class="hljs-comment">//localhost:10011</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="debugserver-启动App"><a href="#debugserver-启动App" class="headerlink" title="debugserver 启动App"></a>debugserver 启动App</h4><p>可观察App是如何启动的</p>
-<figure class="highlight gml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gml">debugserver  -<span class="hljs-variable language_">x</span> auto *:端口号 App的可执行文件路径 <br><span class="hljs-comment">//或者</span><br>debugserver -<span class="hljs-variable language_">x</span> backboard *:<span class="hljs-number">10011</span> /路径<span class="hljs-variable language_">x</span>/<span class="hljs-variable language_">x</span>/xx/xx.app/xx<br></code></pre></td></tr></table></figure>
+<figure class="highlight gml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gml">debugserver  -<span class="hljs-variable language_">x</span> auto *:端口号 App的可执行文件路径 <br><span class="hljs-comment">//或者</span><br>debugserver -<span class="hljs-variable language_">x</span> backboard *:<span class="hljs-number">10011</span> /路径<span class="hljs-variable language_">x</span>/<span class="hljs-variable language_">x</span>/xx/xx.app/xx<br>debugserver -<span class="hljs-variable language_">x</span> backboard localhost:<span class="hljs-number">10011</span> /路径<span class="hljs-variable language_">x</span>/<span class="hljs-variable language_">x</span>/xx/xx.app/xx<br></code></pre></td></tr></table></figure>
 
                 
               </div>
