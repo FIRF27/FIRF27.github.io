@@ -99,4 +99,5 @@ process connect connect://localhost:10011
 debugserver  -x auto *:端口号 App的可执行文件路径 
 //或者
 debugserver -x backboard *:10011 /路径x/x/xx/xx.app/xx
+debugserver -x backboard localhost:10011 /路径x/x/xx/xx.app/xx
 ```
