@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Electron程序解包与压缩</title>
+    <link href="/2025/12/26/Electron%E7%A8%8B%E5%BA%8F%E8%A7%A3%E5%8C%85%E4%B8%8E%E5%8E%8B%E7%BC%A9/"/>
+    <url>/2025/12/26/Electron%E7%A8%8B%E5%BA%8F%E8%A7%A3%E5%8C%85%E4%B8%8E%E5%8E%8B%E7%BC%A9/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Electron程序解包与压缩"><a href="#Electron程序解包与压缩" class="headerlink" title="Electron程序解包与压缩"></a>Electron程序解包与压缩</h1><h2 id="安装-asar"><a href="#安装-asar" class="headerlink" title="安装 asar"></a>安装 asar</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">$ npm <span class="hljs-keyword">install</span> asar -g<br></code></pre></td></tr></table></figure><h2 id="解包"><a href="#解包" class="headerlink" title="解包"></a>解包</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stata">$ asar <span class="hljs-keyword">e</span> <span class="hljs-keyword">app</span>.asar <span class="hljs-keyword">app</span>  <br><br>or<br><br>$ asar extract <span class="hljs-keyword">app</span>.asar targetFolder<br></code></pre></td></tr></table></figure><h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">进入刚刚解包的文件夹</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> targetFolder &amp;&amp; asar p ./ app.asar</span><br><br>or<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">asar pack /path/to/folder app.asar</span><br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Electron</category>
+      
+      <category>js逆向</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Electron</tag>
+      
+      <tag>js逆向</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>常用ffmpeg命令</title>
     <link href="/2025/07/18/%E5%B8%B8%E7%94%A8FFmpeg%E5%91%BD%E4%BB%A4/"/>
     <url>/2025/07/18/%E5%B8%B8%E7%94%A8FFmpeg%E5%91%BD%E4%BB%A4/</url>
