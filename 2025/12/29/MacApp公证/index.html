@@ -19,23 +19,23 @@
   <meta name="author" content="FIRF27">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Electron程序解包与压缩安装 asar1$ npm install asar -g  解包12345$ asar e app.asar app  or$ asar extract app.asar targetFolder  压缩1234567# 进入刚刚解包的文件夹$ cd targetFolder &amp;&amp; asar p .&#x2F; app.asaror$ asar pack &#x2F;p">
+    <meta name="description" content="Electron Mac dmg安装包公证流程DISTRIBUTE OUTSIDE THE MAC APP STORE 为App签名以通过门禁验证 Beginning in macOS 10.14.5, software signed with a new Developer ID certificate and all new or updated kernel extensions must">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Electron程序解包与压缩">
-<meta property="og:url" content="http://example.com/2025/12/26/Electron%E7%A8%8B%E5%BA%8F%E8%A7%A3%E5%8C%85%E4%B8%8E%E5%8E%8B%E7%BC%A9/index.html">
+<meta property="og:title" content="Mac App公证">
+<meta property="og:url" content="http://example.com/2025/12/29/MacApp%E5%85%AC%E8%AF%81/index.html">
 <meta property="og:site_name" content="FIRF">
-<meta property="og:description" content="Electron程序解包与压缩安装 asar1$ npm install asar -g  解包12345$ asar e app.asar app  or$ asar extract app.asar targetFolder  压缩1234567# 进入刚刚解包的文件夹$ cd targetFolder &amp;&amp; asar p .&#x2F; app.asaror$ asar pack &#x2F;p">
+<meta property="og:description" content="Electron Mac dmg安装包公证流程DISTRIBUTE OUTSIDE THE MAC APP STORE 为App签名以通过门禁验证 Beginning in macOS 10.14.5, software signed with a new Developer ID certificate and all new or updated kernel extensions must">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-12-26T01:24:58.000Z">
-<meta property="article:modified_time" content="2025-12-26T01:28:42.500Z">
+<meta property="article:published_time" content="2025-12-29T01:34:43.000Z">
+<meta property="article:modified_time" content="2025-12-31T03:16:23.510Z">
 <meta property="article:author" content="FIRF27">
-<meta property="article:tag" content="Electron">
-<meta property="article:tag" content="js逆向">
+<meta property="article:tag" content="osx">
+<meta property="article:tag" content="dmg">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Electron程序解包与压缩 - FIRF</title>
+  <title>Mac App公证 - FIRF</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Electron程序解包与压缩"></span>
+            <span id="subtitle" data-typed-text="Mac App公证"></span>
           
         </div>
 
@@ -225,8 +225,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-12-26 09:24" pubdate>
-          2025年12月26日 上午
+        <time datetime="2025-12-29 09:34" pubdate>
+          2025年12月29日 上午
         </time>
       </span>
     
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          41 字
+          426 字
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -294,17 +294,41 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Electron程序解包与压缩</h1>
+            <h1 id="seo-header">Mac App公证</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Electron程序解包与压缩"><a href="#Electron程序解包与压缩" class="headerlink" title="Electron程序解包与压缩"></a>Electron程序解包与压缩</h1><h2 id="安装-asar"><a href="#安装-asar" class="headerlink" title="安装 asar"></a>安装 asar</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">$ npm <span class="hljs-keyword">install</span> asar -g<br></code></pre></td></tr></table></figure>
+                <h1 id="Electron-Mac-dmg安装包公证流程"><a href="#Electron-Mac-dmg安装包公证流程" class="headerlink" title="Electron Mac dmg安装包公证流程"></a>Electron Mac dmg安装包公证流程</h1><p><a target="_blank" rel="noopener" href="https://help.apple.com/xcode/mac/current/#/dev033e997ca">DISTRIBUTE OUTSIDE THE MAC APP STORE</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/cn/developer-id/">为App签名以通过门禁验证</a></p>
+<p>Beginning in macOS 10.14.5, software signed with a new Developer ID certificate and all new or updated kernel extensions must be notarized to run. Beginning in macOS 10.15, all software built after June 1, 2019, and distributed with Developer ID must be notarized. </p>
+<p>Mac App 通过非App Store方式分发, 在10.15会弹窗无法打开移到废纸篓、恶意软件等。</p>
+<p>可通过以下命令解决</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">禁用Gatekeeper, 允许运行任何来源的应用</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">sudo</span> spctl --master-disable</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">递归移除属性隔离</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">xattr -rc /path/to/xxx.app</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="解包"><a href="#解包" class="headerlink" title="解包"></a>解包</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stata">$ asar <span class="hljs-keyword">e</span> <span class="hljs-keyword">app</span>.asar <span class="hljs-keyword">app</span>  <br><br>or<br><br>$ asar extract <span class="hljs-keyword">app</span>.asar targetFolder<br></code></pre></td></tr></table></figure>
+<p>如果要更优雅的方式， 那么app就必须要进行公证.</p>
+<p>!!! 公证的前提.app必须开启Hardened Runtime</p>
+<h3 id="Electron-package-json-设置如下"><a href="#Electron-package-json-设置如下" class="headerlink" title="Electron package.json 设置如下"></a>Electron package.json 设置如下</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-attr">&quot;mac&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;icon&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/path/to/target_icon.icns&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;public.app-category.utilities&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;hardenedRuntime&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;gatekeeperAssess&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;target&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>   <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;target&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;dmg&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;arch&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;universal&quot;</span><span class="hljs-punctuation">]</span><br>   <span class="hljs-punctuation">&#125;</span><br>  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;extendInfo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>   <span class="hljs-attr">&quot;CFBundleName&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Your app bundle Name&quot;</span><span class="hljs-punctuation">,</span><br>   <span class="hljs-attr">&quot;CFBundleDisplayName&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Your App Name&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br> <span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">进入刚刚解包的文件夹</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> targetFolder &amp;&amp; asar p ./ app.asar</span><br><br>or<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">asar pack /path/to/folder app.asar</span><br><br></code></pre></td></tr></table></figure>
 
+
+<blockquote>
+<p>如果前3步 都是正常的。 直接跳至4.</p>
+</blockquote>
+<h2 id="1-获取本地钥匙串可用证书"><a href="#1-获取本地钥匙串可用证书" class="headerlink" title="1.获取本地钥匙串可用证书"></a>1.获取本地钥匙串可用证书</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gradle">$ security <span class="hljs-keyword">find</span>-identity | <span class="hljs-keyword">grep</span> <span class="hljs-string">&#x27;Developer ID&#x27;</span><br>eg. <br> <span class="hljs-number">2</span>) <span class="hljs-number">35</span>C767AE9F489D19E1D2A22EA25C41F083xxxx <span class="hljs-string">&quot;Developer ID Application: xxxx Technology Co., Ltd. (Z369xxxx)&quot;</span><br> 其中<span class="hljs-number">35</span>C767AE9F489D19E1D2A22EA25C41F083xxxx 为证书指纹<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-使用Developer-ID证书为app签名"><a href="#2-使用Developer-ID证书为app签名" class="headerlink" title="2. 使用Developer ID证书为app签名"></a>2. 使用Developer ID证书为app签名</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><br>$ codesign -fs <span class="hljs-number">35</span>C767AE9F489D19E1D2A22EA25C41F083xxxx -o runtime -v /<span class="hljs-type">path</span>/<span class="hljs-keyword">to</span>/targer.app <span class="hljs-comment">--deep</span><br><br></code></pre></td></tr></table></figure>
+
+<h2 id="3-生成DMG安装包"><a href="#3-生成DMG安装包" class="headerlink" title="3. 生成DMG安装包"></a>3. 生成DMG安装包</h2><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-comment"># brew install  create-dmg</span><br>$ <span class="hljs-built_in">create-dmg</span> /<span class="hljs-string">path</span>/<span class="hljs-string">to</span>/<span class="hljs-string">target</span>.<span class="hljs-string">app</span>  <span class="hljs-built_in">--no-version-in-filename</span> <br></code></pre></td></tr></table></figure>
+
+<h2 id="4-提交DMG公证"><a href="#4-提交DMG公证" class="headerlink" title="4. 提交DMG公证"></a>4. 提交DMG公证</h2><p>参考<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/security/customizing-the-notarization-workflow">定制公证工作流程</a></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs nix"><span class="hljs-comment"># (本地钥匙串已配置--keychain-profile &quot;notarytool-password&quot;)</span><br>$ xcrun notarytool submit <span class="hljs-symbol">/path/to/target.dmg</span> <span class="hljs-operator">-</span>-keychain-profile <span class="hljs-string">&quot;notarytool-password&quot;</span> <span class="hljs-operator">-</span>-wait<br><br>如果成功，则命令行输出如下内容<br>Submission ID received<br>  <span class="hljs-params">id:</span> <span class="hljs-number">11523</span>ca5-xxx-xxxxx-ac5a-xxxxxxxxx<br>Upload <span class="hljs-params">progress:</span> <span class="hljs-number">100.00</span>% (<span class="hljs-number">198</span> MB of <span class="hljs-number">198</span> MB)   <br>Successfully uploaded file<br>  <span class="hljs-params">id:</span> <span class="hljs-number">11523</span>ca5-xxx-xxxxx-ac5a-xxxxxxxxx<br>  <span class="hljs-params">path:</span> <span class="hljs-symbol">/path/to/target.dmg</span><br>Waiting for processing to complete.<br>Current <span class="hljs-params">status:</span> Accepted..................<br>Processing complete<br>  <span class="hljs-params">id:</span> <span class="hljs-number">11523</span>ca5-xxx-xxxxx-ac5a-xxxxxxxxx<br>  <span class="hljs-params">status:</span> Accepted<br>  <br>失败， status会是rejected<br></code></pre></td></tr></table></figure>
+
+<h2 id="5-验证"><a href="#5-验证" class="headerlink" title="5. 验证"></a>5. 验证</h2><p>通常情况下&#x2F;dist&#x2F;mac-universal&#x2F;xx.app 状态也会变成Accepted</p>
+<p>无须验证刚刚提交的dmg文件, 无意义.</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">$ spctl -<span class="hljs-keyword">a</span> -vvv /path/<span class="hljs-built_in">to</span>/target.app<br></code></pre></td></tr></table></figure>
+
+<h2 id="6-公证凭据嵌入dmg"><a href="#6-公证凭据嵌入dmg" class="headerlink" title="6. 公证凭据嵌入dmg"></a>6. 公证凭据嵌入dmg</h2><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs llvm">$ xcrun stapler staple /path/<span class="hljs-keyword">to</span>/<span class="hljs-keyword">target</span>.dmg<br>$ xcrun stapler validate <span class="hljs-keyword">target</span>.dmp<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -323,15 +347,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Electron/" class="category-chain-item">Electron</a>
+  <a href="/categories/macOS/" class="category-chain-item">macOS</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/Electron/js%E9%80%86%E5%90%91/" class="category-chain-item">js逆向</a>
-  
-  
-
   
 
       </span>
@@ -345,9 +362,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Electron/" class="print-no-link">#Electron</a>
+        <a href="/tags/osx/" class="print-no-link">#osx</a>
       
-        <a href="/tags/js%E9%80%86%E5%90%91/" class="print-no-link">#js逆向</a>
+        <a href="/tags/dmg/" class="print-no-link">#dmg</a>
       
     </div>
   
@@ -359,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Electron程序解包与压缩</div>
-      <div>http://example.com/2025/12/26/Electron程序解包与压缩/</div>
+      <div>Mac App公证</div>
+      <div>http://example.com/2025/12/29/MacApp公证/</div>
     </div>
     <div class="license-meta">
       
@@ -372,7 +389,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年12月26日</div>
+          <div>2025年12月29日</div>
         </div>
       
       
@@ -404,18 +421,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/12/29/MacApp%E5%85%AC%E8%AF%81/" title="Mac App公证">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Mac App公证</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/07/18/%E5%B8%B8%E7%94%A8FFmpeg%E5%91%BD%E4%BB%A4/" title="常用ffmpeg命令">
-                        <span class="hidden-mobile">常用ffmpeg命令</span>
+                      <a href="/2025/12/26/Electron%E7%A8%8B%E5%BA%8F%E8%A7%A3%E5%8C%85%E4%B8%8E%E5%8E%8B%E7%BC%A9/" title="Electron程序解包与压缩">
+                        <span class="hidden-mobile">Electron程序解包与压缩</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
