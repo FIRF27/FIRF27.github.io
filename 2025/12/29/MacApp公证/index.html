@@ -19,15 +19,15 @@
   <meta name="author" content="FIRF27">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Electron Mac dmg安装包公证流程DISTRIBUTE OUTSIDE THE MAC APP STORE 为App签名以通过门禁验证 Beginning in macOS 10.14.5, software signed with a new Developer ID certificate and all new or updated kernel extensions must">
+    <meta name="description" content="Electron Mac dmg安装包公证流程DISTRIBUTE OUTSIDE THE MAC APP STORE 为App签名以通过门禁验证 常见的公证问题 Beginning in macOS 10.14.5, software signed with a new Developer ID certificate and all new or updated kernel extensio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac App公证">
 <meta property="og:url" content="http://example.com/2025/12/29/MacApp%E5%85%AC%E8%AF%81/index.html">
 <meta property="og:site_name" content="FIRF">
-<meta property="og:description" content="Electron Mac dmg安装包公证流程DISTRIBUTE OUTSIDE THE MAC APP STORE 为App签名以通过门禁验证 Beginning in macOS 10.14.5, software signed with a new Developer ID certificate and all new or updated kernel extensions must">
+<meta property="og:description" content="Electron Mac dmg安装包公证流程DISTRIBUTE OUTSIDE THE MAC APP STORE 为App签名以通过门禁验证 常见的公证问题 Beginning in macOS 10.14.5, software signed with a new Developer ID certificate and all new or updated kernel extensio">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-29T01:34:43.000Z">
-<meta property="article:modified_time" content="2025-12-31T03:16:23.510Z">
+<meta property="article:modified_time" content="2025-12-31T03:24:36.934Z">
 <meta property="article:author" content="FIRF27">
 <meta property="article:tag" content="osx">
 <meta property="article:tag" content="dmg">
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          426 字
+          433 字
         
       </span>
     
@@ -301,6 +301,7 @@
                 
                 <h1 id="Electron-Mac-dmg安装包公证流程"><a href="#Electron-Mac-dmg安装包公证流程" class="headerlink" title="Electron Mac dmg安装包公证流程"></a>Electron Mac dmg安装包公证流程</h1><p><a target="_blank" rel="noopener" href="https://help.apple.com/xcode/mac/current/#/dev033e997ca">DISTRIBUTE OUTSIDE THE MAC APP STORE</a></p>
 <p><a target="_blank" rel="noopener" href="https://developer.apple.com/cn/developer-id/">为App签名以通过门禁验证</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/security/resolving-common-notarization-issues#Notarize-macOS-apps-with-external-dependencies">常见的公证问题</a></p>
 <p>Beginning in macOS 10.14.5, software signed with a new Developer ID certificate and all new or updated kernel extensions must be notarized to run. Beginning in macOS 10.15, all software built after June 1, 2019, and distributed with Developer ID must be notarized. </p>
 <p>Mac App 通过非App Store方式分发, 在10.15会弹窗无法打开移到废纸篓、恶意软件等。</p>
 <p>可通过以下命令解决</p>
@@ -329,6 +330,9 @@
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">$ spctl -<span class="hljs-keyword">a</span> -vvv /path/<span class="hljs-built_in">to</span>/target.app<br></code></pre></td></tr></table></figure>
 
 <h2 id="6-公证凭据嵌入dmg"><a href="#6-公证凭据嵌入dmg" class="headerlink" title="6. 公证凭据嵌入dmg"></a>6. 公证凭据嵌入dmg</h2><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs llvm">$ xcrun stapler staple /path/<span class="hljs-keyword">to</span>/<span class="hljs-keyword">target</span>.dmg<br>$ xcrun stapler validate <span class="hljs-keyword">target</span>.dmp<br></code></pre></td></tr></table></figure>
+
+
+
 
                 
               </div>
