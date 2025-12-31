@@ -12,6 +12,8 @@ date: 2025-12-29 09:34:43
 
 [为App签名以通过门禁验证](https://developer.apple.com/cn/developer-id/)
 
+[常见的公证问题](https://developer.apple.com/documentation/security/resolving-common-notarization-issues#Notarize-macOS-apps-with-external-dependencies)
+
 Beginning in macOS 10.14.5, software signed with a new Developer ID certificate and all new or updated kernel extensions must be notarized to run. Beginning in macOS 10.15, all software built after June 1, 2019, and distributed with Developer ID must be notarized. 
 
 Mac App 通过非App Store方式分发, 在10.15会弹窗无法打开移到废纸篓、恶意软件等。
@@ -120,3 +122,6 @@ $ spctl -a -vvv /path/to/target.app
 $ xcrun stapler staple /path/to/target.dmg
 $ xcrun stapler validate target.dmp
 ```
+
+
+
