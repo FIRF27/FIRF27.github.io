@@ -60,8 +60,8 @@ class OTAHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 server_address = ("0.0.0.0", PORT)
 httpd = http.server.HTTPServer(server_address, OTAHTTPRequestHandler)
 print(f"✅ HTTP 服务已启动 http://localhost:{PORT}")
-print("   请另开终端执行: ngrok http 8443")
-print("   将 manifest.plist 里的 URL 改为 ngrok 提供的 https 地址（如 https://xxx.ngrok-free.app）")
+print("请另开终端执行: ngrok http 8443")
+print("将 manifest.plist 里的 URL 改为 ngrok 提供的 https 地址（如 https://xxx.ngrok-free.app）")
 httpd.serve_forever()
 
 ```
@@ -116,13 +116,13 @@ ngrok http 8443
 
 ```
 
-### 4. **`打开下载界面` **
+### 5. **`打开下载界面` **
 
 **`打开下载界面`  eg. ** https://abc123.ngrok-free.dev
 
 ---
 
-### 附录index.html
+### 附录1. index.html
 
 ```
 <!DOCTYPE html>
@@ -184,5 +184,36 @@ ngrok http 8443
   </script>
 </body>
 </html>
+```
+
+
+
+### 附录2. 使用本地自签证书
+
+> 手机safair提前打开本地地址 http://172.xx.xx.xx/ca.crt, 然后设置证书信任.
+
+ https_server.py 内容
+
+```
+import http.server
+import ssl
+
+PORT = 8443
+CERT_FILE = "server.pem"  # 你的证书文件路径
+
+server_address = ("0.0.0.0", PORT)
+handler = http.server.SimpleHTTPRequestHandler
+
+httpd = http.server.HTTPServer(server_address, handler)
+
+# 使用新的 SSLContext API
+context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+context.load_cert_chain(certfile=CERT_FILE)
+
+httpd.socket = context.wrap_socket(httpd.socket, server_side=True)
+
+print(f"✅ Serving HTTPS on https://localhost:{PORT}")
+httpd.serve_forever()
+
 ```
 
