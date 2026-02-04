@@ -2,7 +2,7 @@
 layout: '#'
 title: h5页面在ios端无法自动弹出键盘
 date: 2026-02-03 15:17:38
-tags:
+tags: [iOS]
 ---
 
 # 允许 WKWebView 在没有用户交互的情况下显示键盘
@@ -15,9 +15,11 @@ WKWebView没有UIWebView 的 `keyboardDisplayRequiresUserAction = false`
 
 ⚠️ 注意：此方法使用了私有 API  存在审核风险
 
+## 实现
+
 ```
 
-   // 私有方法选择器： "_elementDidFocus:userIsInteracting:blurPreviousNode:activityStateChanges:userObject:"
+   // iOS 13+ 私有方法选择器： "_elementDidFocus:userIsInteracting:blurPreviousNode:activityStateChanges:userObject:"
    private func obfuscatedSelectorName() -> String {
 //        let parts = [
 //            "_ele", "ment", "Did", "Focus",
@@ -54,28 +56,28 @@ WKWebView没有UIWebView 的 `keyboardDisplayRequiresUserAction = false`
 /// 允许 WKWebView 在没有用户交互的情况下显示键盘
 
 @available(iOS 13.0, *)
-    private func allowDisplayingKeyboardWithoutUserAction() {
+private func allowDisplayingKeyboardWithoutUserAction() {
      
-        // 获取私有 WKContentView 类
-        guard let contentViewClass = NSClassFromString("WKContentView") else {
-            NSLog("⚠️ [KeyboardFix] WKContentView 类未找到，键盘自动显示功能可能不可用")
-            return
-        }
-       
-        let selectorString = obfuscatedSelectorName()
-        let selector = sel_getUid(selectorString)
-        
-        guard replaceMethodImplementation(
-            on: contentViewClass,
-            selector: selector,
-            selectorString: selectorString
-        ) else {
-            NSLog("⚠️ [KeyboardFix] 方法替换失败，键盘自动显示功能可能不可用")
-            return
-        }
-        
-        NSLog("✅ [KeyboardFix] WKWebView 键盘自动显示功能已启用")
+    // 获取私有 WKContentView 类
+    guard let contentViewClass = NSClassFromString("WKContentView") else {
+        NSLog("⚠️ [KeyboardFix] WKContentView 类未找到，键盘自动显示功能可能不可用")
+        return
     }
+       
+      let selectorString = obfuscatedSelectorName()
+      let selector = sel_getUid(selectorString)
+
+      guard replaceMethodImplementation(
+          on: contentViewClass,
+          selector: selector,
+          selectorString: selectorString
+      ) else {
+          NSLog("⚠️ [KeyboardFix] 方法替换失败，键盘自动显示功能可能不可用")
+          return
+      }
+
+      NSLog("✅ [KeyboardFix] WKWebView 键盘自动显示功能已启用")
+  }
     
     /// 替换指定类的方法实现
     /// - Parameters:
