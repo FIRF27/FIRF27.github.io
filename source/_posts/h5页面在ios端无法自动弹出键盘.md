@@ -1,8 +1,9 @@
 ---
-layout: '#'
-title: h5页面在ios端无法自动弹出键盘
+title: H5页面在iOS端无法自动弹出键盘
 date: 2026-02-03 15:17:38
 tags: [iOS]
+categories:
+  - [iOS]
 ---
 
 # 允许 WKWebView 在没有用户交互的情况下显示键盘
