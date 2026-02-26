@@ -1,10 +1,12 @@
 ---
 title: H5页面在iOS端无法自动弹出键盘
-date: 2026-02-03 15:17:38
 tags: [iOS]
 categories:
   - [iOS]
+date: 2026-02-03 15:17:38
 ---
+
+
 
 # 允许 WKWebView 在没有用户交互的情况下显示键盘
 
@@ -18,7 +20,7 @@ WKWebView没有UIWebView 的 `keyboardDisplayRequiresUserAction = false`
 
 ## 实现
 
-```
+```swift
 
    // iOS 13+ 私有方法选择器： "_elementDidFocus:userIsInteracting:blurPreviousNode:activityStateChanges:userObject:"
    private func obfuscatedSelectorName() -> String {
@@ -130,10 +132,10 @@ private func allowDisplayingKeyboardWithoutUserAction() {
             originalFunction(target, selector, arg0, true, arg2, arg3, arg4)
         }
         
-        // 将 block 转换为 IMP（Swift 中返回值不是 Optional，不能用 guard let）
+        // 将 block 转换为 IMP
         let newIMP = imp_implementationWithBlock(newBlock)
         
-        // 替换方法实现
+        // 交换方法
         method_setImplementation(method, newIMP)
         
         return true
