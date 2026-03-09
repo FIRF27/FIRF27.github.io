@@ -15,7 +15,7 @@ date: 2026-03-03 17:51:53
 # APNs推送测试脚本 
 
 # .p8密钥文件路径
-AUTH_KEY="/Users/apple/Desktop/PushShell/AuthKey_KM5QA26ZZ5.p8"  
+AUTH_KEY="/Users/apple/Desktop/PushShell/AuthKey.p8"  
 
 # key id        
 KEY_ID="XXXXXXXXX"    
@@ -25,7 +25,7 @@ TEAM_ID="XXXXXXXXX"
 TOPIC="com.xxx.app"  
 
 # device token
-DEVICE_TOKEN="6484d5cc2cef0e9ab1d89c22304f66cf8db5e1a5f52b682357586e2e34f3d597"  
+DEVICE_TOKEN="6484x5xx2xxx0e9ab1d89c22304f66cf8db5e1a5f52b682357586e2e34f3d597"  
 
 # 开发环境：api.sandbox.push.apple.com；生产环境：api.push.apple.com
 APNS_HOST="api.push.apple.com"      
